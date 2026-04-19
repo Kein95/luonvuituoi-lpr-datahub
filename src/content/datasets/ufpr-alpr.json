@@ -1,0 +1,12 @@
+{
+  "name": "UFPR-ALPR",
+  "country": "Brazil",
+  "size": "4.5K",
+  "frames": "single",
+  "access": "license",
+  "task": "detection + recognition",
+  "annotation": "4 corners + plate text + vehicle info",
+  "year": 2018,
+  "source_url": "https://github.com/raysonlaroca/ufpr-alpr-dataset",
+  "notes": "Real traffic scenes. 150 vehicles, 30 frames each. License agreement required."
+}
