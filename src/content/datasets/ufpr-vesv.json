@@ -7,6 +7,6 @@
   "task": "recognition + vehicle color",
   "annotation": "plate text + vehicle color",
   "year": 2024,
-  "source_url": null,
+  "source_url": "https://github.com/Lima001/UFPR-VeSV-Dataset",
   "notes": "Vehicle surveillance. Requires .edu email to request access."
 }

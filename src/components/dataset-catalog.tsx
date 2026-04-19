@@ -35,7 +35,7 @@ export default function DatasetCatalog({ datasets }: Props) {
   const [filterAccess, setFilterAccess] = useState("");
   const [filterFrames, setFilterFrames] = useState("");
   const [filterTask, setFilterTask] = useState("");
-  const [sortCol, setSortCol] = useState<SortCol>("name");
+  const [sortCol, setSortCol] = useState<SortCol>("country");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
 
   const countries = useMemo(() => [...new Set(datasets.map((d) => d.country))].sort(), [datasets]);

@@ -141,7 +141,7 @@ export default function SotaTable({ sotaData }: Props) {
 
       <p className="text-xs text-[rgb(var(--muted))] mt-4">
         Results sourced from published papers. Submit yours via{" "}
-        <a href="https://github.com/luonvuituoi/lpr-dataset-hub" target="_blank" rel="noopener" className="text-[rgb(var(--accent))] hover:underline">
+        <a href="https://github.com/Kein95/luonvuituoi-lpr-datahub" target="_blank" rel="noopener" className="text-[rgb(var(--accent))] hover:underline">
           GitHub PR
         </a>.
       </p>

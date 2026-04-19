@@ -7,6 +7,6 @@
   "task": "detection + recognition",
   "annotation": "bounding box + plate text",
   "year": 2013,
-  "source_url": null,
+  "source_url": "https://github.com/AvLab-CV/AOLP",
   "notes": "Application-Oriented LP. 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). License agreement required."
 }

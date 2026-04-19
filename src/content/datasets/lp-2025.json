@@ -7,6 +7,6 @@
   "task": "recognition",
   "annotation": "4 corners + plate text",
   "year": 2025,
-  "source_url": null,
+  "source_url": "https://github.com/AvLab-CV/LP2025",
   "notes": "1.87 plates/image avg. Introduced with Style-Preserving Generator (SPG). License agreement required."
 }
