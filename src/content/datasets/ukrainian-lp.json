@@ -13,6 +13,6 @@
   "classes": 24,
   "resolution": "416x128 px avg",
   "license_type": "CC BY 4.0",
-  "paper_url": "https://zenodo.org/doi/10.5281/zenodo.13342102",
+  "paper_url": "https://arxiv.org/abs/2501.03374",
   "bibtex": "@misc{ukrainian_lp_2024,\n  title={Synthetic Ukrainian License Plate Dataset via Diffusion Models},\n  author={Ku-DML Research Group},\n  year={2024},\n  howpublished={\\url{https://zenodo.org/doi/10.5281/zenodo.13342102}}\n}"
 }
