@@ -66,7 +66,7 @@ try {
             <span class="font-medium">Fork & Create File</span>
           </div>
           <p class="text-sm text-[rgb(var(--muted))] ml-9">
-            Fork <a href="https://github.com/Kein95/luonvuituoi-lpr-datahub" target="_blank" rel="noopener" class="text-[rgb(var(--accent))] hover:underline">the repo</a>, create a JSON file at <code class="text-xs bg-[rgb(var(--bg-subtle))] px-1 py-0.5 rounded">src/content/sota/{dataset-id}.json</code>
+            Fork <a href="https://github.com/Kein95/luonvuituoi-lpr-datahub" target="_blank" rel="noopener" class="text-[rgb(var(--accent))] hover:underline">the repo</a>, create a JSON file at <code class="text-xs bg-[rgb(var(--bg-subtle))] px-1 py-0.5 rounded">src/content/sota/&#123;dataset-id&#125;.json</code>
           </p>
         </div>
         <!-- Step 2 -->
@@ -97,12 +97,12 @@ try {
           <div class="flex items-center justify-between px-4 py-2 border-b border-[rgb(var(--card-border))]/50 bg-[rgb(var(--card))]/80">
             <span class="text-xs font-mono text-[rgb(var(--muted))]">src/content/sota/ccpd-2019.json</span>
           </div>
-          <pre class="text-xs font-mono text-[rgb(var(--muted))] p-4 overflow-x-auto whitespace-pre-wrap leading-relaxed bg-[rgb(var(--bg-subtle))]">{`{
+          <pre class="text-xs font-mono text-[rgb(var(--muted))] p-4 overflow-x-auto whitespace-pre-wrap leading-relaxed bg-[rgb(var(--bg-subtle))]">&#123;
   "dataset_id": "ccpd-2019",
   "metric": "sequence_accuracy",
   "metric_label": "Sequence Accuracy (%)",
   "results": [
-    {
+    &#123;
       "method": "Your Method",
       "paper": "Paper Title",
       "venue": "ECCV 2025",
@@ -111,9 +111,9 @@ try {
       "params_m": 12.3,
       "code_url": "https://github.com/...",
       "notes": "Optional note"
-    }
+    &#125;
   ]
-}`}</pre>
+&#125;</pre>
         </div>
       </details>
     </div>
