@@ -10,7 +10,7 @@
   "source_url": "https://github.com/lmlwojcik/lplc-dataset",
   "notes": "4 legibility levels.",
   "description": "License Plate Legibility Classification dataset. 12.7K plates across 4 readability levels (Perfect/Good/Poor/Illegible). Novel task: legibility prediction prior to OCR.",
-  "classes": 4,
+  "classes": 36,
   "resolution": "~150-400px typical",
   "license_type": "Academic Non-Commercial",
   "paper_url": "https://arxiv.org/abs/2508.18425",
