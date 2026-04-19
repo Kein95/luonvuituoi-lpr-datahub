@@ -84,6 +84,28 @@ const multiFrameCount = datasets.filter((d) => d.frames.toLowerCase().includes("
     </div>
   </section>
 
+  <!-- Access Levels -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+    <div class="flex flex-wrap justify-center gap-4 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="badge bg-[rgb(var(--public))]/10 text-[rgb(var(--public))] border border-[rgb(var(--public))]/20">Public</span>
+        <span class="text-[rgb(var(--muted))]">Free download</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="badge bg-[rgb(var(--license))]/10 text-[rgb(var(--license))] border border-[rgb(var(--license))]/20">License</span>
+        <span class="text-[rgb(var(--muted))]">Agreement required</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="badge bg-[rgb(var(--license))]/10 text-[rgb(var(--license))] border border-[rgb(var(--license))]/20">.edu</span>
+        <span class="text-[rgb(var(--muted))]">.edu email required</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="badge bg-[rgb(var(--staff))]/10 text-[rgb(var(--staff))] border border-[rgb(var(--staff))]/20">Staff</span>
+        <span class="text-[rgb(var(--muted))]">University staff only</span>
+      </div>
+    </div>
+  </section>
+
   <!-- Dataset Catalog -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
     <DatasetCatalog client:load datasets={datasets} />
