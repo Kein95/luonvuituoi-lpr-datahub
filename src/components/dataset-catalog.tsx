@@ -130,14 +130,14 @@ export default function DatasetCatalog({ datasets }: Props) {
                 <th
                   key={col}
                   onClick={() => handleSort(col)}
-                  className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))] cursor-pointer hover:text-[rgb(var(--fg))] select-none transition-colors"
+                  className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))] cursor-pointer hover:text-[rgb(var(--fg))] select-none transition-colors"
                 >
                   {col}<SortArrow col={col} />
                 </th>
               ))}
-              <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
-              <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Access</th>
-              <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Notes</th>
+              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
+              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Access</th>
+              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Notes</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[rgb(var(--card-border))]/60">
