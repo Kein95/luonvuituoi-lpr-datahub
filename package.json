@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "install:vercel": "npm install --legacy-peer-deps"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
