@@ -16,36 +16,66 @@ try {
 <Base title="SOTA Leaderboard — LPR Dataset Hub" description="Published state-of-the-art results for License Plate Recognition datasets.">
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <!-- Header -->
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold mb-2">SOTA Leaderboard</h1>
+    <div class="mb-8 text-center">
+      <div class="inline-flex items-center gap-2 mb-4">
+        <h1 class="text-3xl font-bold">SOTA Leaderboard</h1>
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[rgb(var(--license))]/15 text-[rgb(var(--license))] text-xs font-bold uppercase tracking-wider animate-pulse">
+          🔄 Updating
+        </span>
+      </div>
       <p class="text-[rgb(var(--muted))]">
         Published results from peer-reviewed papers. Compare methods across datasets.
       </p>
     </div>
 
-    {sotaData.length > 0 ? (
-      <SotaTable client:load sotaData={sotaData} />
-    ) : (
-      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-12 text-center">
-        <p class="text-[rgb(var(--muted))] text-lg mb-4">SOTA data coming soon.</p>
-        <p class="text-sm text-[rgb(var(--muted))]">
-          Help us build the leaderboard — <a href="https://github.com/Kein95/luonvuituoi-lpr-datahub" target="_blank" rel="noopener" class="text-[rgb(var(--accent))] hover:underline">submit results via PR</a>.
-        </p>
-      </div>
-    )}
-
-    <!-- How to contribute -->
-    <div class="mt-12 rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
-      <h2 class="text-lg font-semibold mb-3">Submit SOTA Results</h2>
-      <p class="text-sm text-[rgb(var(--muted))] mb-4">
-        Add your published results to the leaderboard via GitHub PR. Each entry requires:
+    <!-- Updating Banner -->
+    <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-[rgb(var(--accent))]/30 bg-gradient-to-br from-[rgb(var(--accent))]/5 to-[rgb(var(--card))] p-8 sm:p-12 text-center mb-8">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--license))] to-[rgb(var(--accent))] animate-pulse"></div>
+      <div class="text-5xl mb-4">🏗️</div>
+      <h2 class="text-2xl font-bold mb-3">Leaderboard Under Construction</h2>
+      <p class="text-[rgb(var(--muted))] max-w-lg mx-auto mb-6">
+        We're collecting and verifying SOTA results from published papers across all datasets.
+        Want to speed things up?
       </p>
-      <ul class="text-sm text-[rgb(var(--muted))] list-disc list-inside space-y-1">
-        <li>Method name and paper reference</li>
-        <li>Publication venue and year</li>
-        <li>Accuracy metric (sequence accuracy preferred)</li>
-        <li>Code URL (optional but encouraged)</li>
-      </ul>
+      <a
+        href="https://github.com/Kein95/luonvuituoi-lpr-datahub"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[rgb(var(--accent))] text-white font-semibold hover:opacity-90 transition-opacity"
+      >
+        ⭐ Submit Results via PR
+      </a>
     </div>
+
+    <!-- What we're looking for -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
+        <div class="text-2xl mb-2">📊</div>
+        <h3 class="font-semibold mb-2">Datasets Tracked</h3>
+        <ul class="text-sm text-[rgb(var(--muted))] space-y-1">
+          <li>🇨🇳 CCPD 2019 / 2020</li>
+          <li>🇧🇷 RodoSol-ALPR</li>
+          <li>🇹🇼 AOLP</li>
+          <li>🇺🇦 Ukrainian LP</li>
+          <li>🇮🇷 IR-LPR</li>
+          <li>...and more</li>
+        </ul>
+      </div>
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
+        <div class="text-2xl mb-2">📝</div>
+        <h3 class="font-semibold mb-2">How to Submit</h3>
+        <ul class="text-sm text-[rgb(var(--muted))] space-y-1">
+          <li>✅ Method name & paper reference</li>
+          <li>✅ Publication venue & year</li>
+          <li>✅ Accuracy metric (seq accuracy preferred)</li>
+          <li>✅ Code URL (optional but encouraged)</li>
+          <li>✅ Submit as JSON via GitHub PR</li>
+        </ul>
+      </div>
+    </div>
+
+    {sotaData.length > 0 && (
+      <SotaTable client:load sotaData={sotaData} />
+    )}
   </div>
 </Base>
