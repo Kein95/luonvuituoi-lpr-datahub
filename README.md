@@ -49,7 +49,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add datasets or SOTA results v
 
 Special thanks to the [AI VIET NAM (AIO)](https://aivietnam.edu.vn/) community and TA [Truong-Binh Duong](https://github.com/duongtruongbinh).
 
-Vibe Coding with [Claude Code](https://claude.ai/code).
+Vibe Coding.
 
 ## License
 
