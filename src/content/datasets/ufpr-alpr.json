@@ -13,6 +13,6 @@
   "classes": 34,
   "resolution": "1920x1080 px",
   "license_type": "Academic Non-Commercial",
-  "paper_url": "https://github.com/raysonlaroca/ufpr-alpr-dataset",
+  "paper_url": "https://arxiv.org/abs/1802.09567",
   "bibtex": "@inproceedings{laroca2018robust,\n  title={A Robust Real-Time Automatic License Plate Recognition Based on the YOLO Detector},\n  author={Laroca, Rayson and Severo, Evair V and Zanlorensi, Junior and others},\n  booktitle={IJCNN},\n  pages={1--10},\n  year={2018}\n}"
 }
