@@ -10,7 +10,7 @@
   "source_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
   "notes": "LR-HR pairs. Optical flow.",
   "description": "Multi-frame super-resolution benchmark with 1,052 sequences. Each sequence: 31 LR frames + 1 HR reference. LR-HR aligned pairs with optical flow guidance from real traffic.",
-  "classes": 24,
+  "classes": 10,
   "resolution": "LR 32x64 -> HR 256x512 px",
   "license_type": "CC BY 4.0",
   "paper_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
