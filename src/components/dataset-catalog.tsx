@@ -196,9 +196,9 @@ export default function DatasetCatalog({ datasets }: Props) {
                     <td className="px-5 py-4">
                       <span className={cn(
                         "badge",
-                        d.frames.includes("multi")
+                        d.frames.toLowerCase() === "multi"
                           ? "bg-[rgb(var(--accent))]/10 text-[rgb(var(--accent))] border border-[rgb(var(--accent))]/20"
-                          : "bg-[rgb(var(--muted))]/10 text-[rgb(var(--muted))] border border-[rgb(var(--muted))]/20"
+                          : "bg-[rgb(var(--public))]/10 text-[rgb(var(--public))] border border-[rgb(var(--public))]/20"
                       )}>
                         {d.frames}
                       </span>
