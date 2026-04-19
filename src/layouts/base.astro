@@ -45,6 +45,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         document.documentElement.classList.toggle("dark", d);
       })();
     </script>
+    <!-- Google Analytics 4 (free) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F88P9FS87Q"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F88P9FS87Q');
+    </script>
     <!-- Vercel Analytics (free) -->
     <script defer src="/_vercel/insights/script.js"></script>
     <!-- Vercel Speed Insights (free) -->
