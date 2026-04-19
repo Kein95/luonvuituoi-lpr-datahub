@@ -13,6 +13,6 @@
   "classes": 26,
   "resolution": "LR (far from camera) + HR (close to camera), real surveillance",
   "license_type": "Academic Staff Only",
-  "paper_url": "https://github.com/valfride/UFPR-SR-Plates",
+  "paper_url": "https://arxiv.org/abs/2505.06393",
   "bibtex": "@article{silva2025ufpr_sr_plates,\n  title={UFPR-SR-Plates: A Benchmark for Real-World License Plate Super-Resolution},\n  author={Silva, Valfrido and Others},\n  journal={Neurocomputing},\n  year={2025}\n}"
 }
