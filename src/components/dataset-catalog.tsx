@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { cn, getFlag } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export interface Dataset {
   id: string;
@@ -34,22 +34,19 @@ export default function DatasetCatalog({ datasets }: Props) {
   const [filterCountry, setFilterCountry] = useState("");
   const [filterAccess, setFilterAccess] = useState("");
   const [filterFrames, setFilterFrames] = useState("");
-  const [filterTask, setFilterTask] = useState("");
   const [sortCol, setSortCol] = useState<SortCol>("country");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
 
   const countries = useMemo(() => [...new Set(datasets.map((d) => d.country))].sort(), [datasets]);
-  const tasks = useMemo(() => [...new Set(datasets.map((d) => d.task))].sort(), [datasets]);
 
   const filtered = useMemo(() => {
     const q = search.toLowerCase();
     return datasets
       .filter((d) => {
-        if (q && !d.name.toLowerCase().includes(q) && !(d.notes || "").toLowerCase().includes(q)) return false;
+        if (q && !d.name.toLowerCase().includes(q) && !d.country.toLowerCase().includes(q) && !(d.notes || "").toLowerCase().includes(q)) return false;
         if (filterCountry && d.country !== filterCountry) return false;
         if (filterAccess && d.access !== filterAccess) return false;
-        if (filterFrames && !d.frames.includes(filterFrames)) return false;
-        if (filterTask && d.task !== filterTask) return false;
+        if (filterFrames && !d.frames.toLowerCase().includes(filterFrames)) return false;
         return true;
       })
       .sort((a, b) => {
@@ -61,7 +58,7 @@ export default function DatasetCatalog({ datasets }: Props) {
         if (va > vb) return sortDir === "asc" ? 1 : -1;
         return 0;
       });
-  }, [datasets, search, filterCountry, filterAccess, filterFrames, filterTask, sortCol, sortDir]);
+  }, [datasets, search, filterCountry, filterAccess, filterFrames, sortCol, sortDir]);
 
   function handleSort(col: SortCol) {
     if (sortCol === col) setSortDir(sortDir === "asc" ? "desc" : "asc");
@@ -102,7 +99,7 @@ export default function DatasetCatalog({ datasets }: Props) {
         </div>
         <select value={filterCountry} onChange={(e) => setFilterCountry(e.target.value)} className={selectClass}>
           <option value="">All Countries</option>
-          {countries.map((c) => <option key={c} value={c}>{getFlag(c)} {c}</option>)}
+          {countries.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
         <select value={filterAccess} onChange={(e) => setFilterAccess(e.target.value)} className={selectClass}>
           <option value="">All Access</option>
@@ -115,10 +112,6 @@ export default function DatasetCatalog({ datasets }: Props) {
           <option value="">All Frames</option>
           <option value="single">Single</option>
           <option value="multi">Multi</option>
-        </select>
-        <select value={filterTask} onChange={(e) => setFilterTask(e.target.value)} className={selectClass}>
-          <option value="">All Tasks</option>
-          {tasks.map((t) => <option key={t} value={t}>{t}</option>)}
         </select>
       </div>
 
@@ -143,14 +136,13 @@ export default function DatasetCatalog({ datasets }: Props) {
               ))}
               <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
               <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Access</th>
-              <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Task</th>
               <th className="px-5 py-3.5 text-left text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Notes</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[rgb(var(--card-border))]/60">
             {filtered.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-5 py-12 text-center text-[rgb(var(--muted))]">
+                <td colSpan={7} className="px-5 py-12 text-center text-[rgb(var(--muted))]">
                   No datasets match your filters.
                 </td>
               </tr>
@@ -165,7 +157,6 @@ export default function DatasetCatalog({ datasets }: Props) {
                         className="text-[rgb(var(--fg))] hover:text-[rgb(var(--accent))] transition-colors font-semibold"
                         data-astro-prefetch
                       >
-                        <span className="mr-1.5">{getFlag(d.country)}</span>
                         {d.name}
                       </a>
                       {d.source_url && (
@@ -183,8 +174,8 @@ export default function DatasetCatalog({ datasets }: Props) {
                         </a>
                       )}
                     </td>
-                    <td className="px-5 py-4 text-[rgb(var(--muted))] text-sm">{d.country}</td>
-                    <td className="px-5 py-4 font-mono text-xs tabular-nums text-[rgb(var(--fg))]">{d.size || "—"}</td>
+                    <td className="px-5 py-4 text-sm">{d.country}</td>
+                    <td className="px-5 py-4 font-mono text-xs tabular-nums">{d.size || "—"}</td>
                     <td className="px-5 py-4 font-mono text-xs tabular-nums">{d.year || "—"}</td>
                     <td className="px-5 py-4">
                       <span className={cn(
@@ -201,8 +192,7 @@ export default function DatasetCatalog({ datasets }: Props) {
                         {badge.label}
                       </span>
                     </td>
-                    <td className="px-5 py-4 text-[rgb(var(--muted))] text-xs">{d.task}</td>
-                    <td className="px-5 py-4 text-[rgb(var(--muted))] text-xs max-w-[250px] truncate" title={d.notes}>
+                    <td className="px-5 py-4 text-[rgb(var(--muted))] text-xs max-w-[220px]" title={d.notes}>
                       {d.notes || "—"}
                     </td>
                   </tr>

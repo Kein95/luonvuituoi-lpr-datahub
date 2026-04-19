@@ -13,7 +13,7 @@ const datasets = allDatasets.map((entry) => ({
 const totalDatasets = datasets.length;
 const countries = new Set(datasets.map((d) => d.country));
 const publicCount = datasets.filter((d) => d.access === "public").length;
-const multiFrameCount = datasets.filter((d) => d.frames.includes("multi")).length;
+const multiFrameCount = datasets.filter((d) => d.frames.toLowerCase().includes("multi")).length;
 ---
 
 <Base title="LPR Dataset Hub — ALL-IN-ONE Gateway for LPR Research">
