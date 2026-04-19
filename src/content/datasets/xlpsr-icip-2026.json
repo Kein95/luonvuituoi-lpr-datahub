@@ -2,7 +2,7 @@
   "name": "XLPSR / ICIP 2026",
   "country": "France",
   "size": "~4.7K frames",
-  "frames": "Multi (10 Per Seq)",
+  "frames": "Multi",
   "access": "license",
   "task": "Super-Resolution + Recognition",
   "annotation": "detection coords + plate text",

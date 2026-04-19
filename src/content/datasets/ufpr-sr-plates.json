@@ -2,7 +2,7 @@
   "name": "UFPR-SR-Plates",
   "country": "Brazil",
   "size": "100K (10K tracks x 10 frames)",
-  "frames": "Multi (5 LR + 5 HR Per Track)",
+  "frames": "Multi",
   "access": "license-staff",
   "task": "Super-Resolution + Recognition",
   "annotation": "5 LR + 5 HR sequential frames + plate text",

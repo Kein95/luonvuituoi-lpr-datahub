@@ -2,7 +2,7 @@
   "name": "ICPR 2026 LR-LPR",
   "country": "Brazil",
   "size": "20K tracks (~200K images)",
-  "frames": "Multi (10 Per Seq)",
+  "frames": "Multi",
   "access": "license",
   "task": "Recognition",
   "annotation": "plate text",
