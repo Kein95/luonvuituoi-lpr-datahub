@@ -1,7 +1,7 @@
 {
   "name": "ICPR 2026 LR-LPR",
   "country": "Brazil",
-  "size": "~19.8K",
+  "size": "20K tracks (~200K images)",
   "frames": "multi (10 per seq)",
   "access": "license",
   "task": "Recognition",
@@ -9,7 +9,7 @@
   "year": 2026,
   "source_url": "https://icpr26lrlpr.github.io/",
   "notes": "Multi-frame LR challenge. License required.",
-  "description": "ICPR 2026 official challenge. Multi-frame (10 per track) low-resolution LP recognition. Two scenarios: A (full annotations) and B (text + layout only).",
+  "description": "ICPR 2026 official challenge. 20K tracks (10K Scenario A + 10K Scenario B). Each track: 5 LR + 5 HR frames. Total ~200K images from real-world surveillance.",
   "classes": 36,
   "resolution": "LR + HR frame pairs (dimensions not published)",
   "license_type": "Non-Commercial Research (.edu required)",

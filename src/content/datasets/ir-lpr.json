@@ -1,7 +1,7 @@
 {
   "name": "IR-LPR",
   "country": "Iran",
-  "size": "~18K",
+  "size": "20,967 cars + 27,745 LPs",
   "frames": "single",
   "access": "public",
   "task": "Recognition",

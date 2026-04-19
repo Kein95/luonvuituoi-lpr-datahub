@@ -1,7 +1,7 @@
 {
   "name": "Realistic LP Restoration",
   "country": "Korea",
-  "size": "200 sequences",
+  "size": "1,052 sequences (~32K frames)",
   "frames": "multi",
   "access": "public",
   "task": "Restoration + Recognition",
@@ -9,7 +9,7 @@
   "year": 2025,
   "source_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
   "notes": "Multi-frame restoration. Optical flow alignment.",
-  "description": "Multi-frame super-resolution benchmark with LR-HR aligned pairs. Real traffic scenes captured at 10-100m distances. Provides optical flow guidance.",
+  "description": "Multi-frame super-resolution benchmark with 1,052 sequences of license plates (31 frames each). LR-HR aligned pairs with optical flow guidance from real traffic.",
   "classes": 24,
   "resolution": "LR 32x64 -> HR 256x512 px",
   "license_type": "CC BY 4.0",
