@@ -1,16 +1,17 @@
-# LPR Dataset Hub
+# 🚗 LPR Dataset Hub
 
 **ALL-IN-ONE gateway for License Plate Recognition research.**
 
-Discover, compare, and access 15+ datasets across 10+ countries.
+🌐 **Live:** [lpr-dataset-hub.vercel.app](https://lpr-dataset-hub.vercel.app/)
 
-> Built with [Astro](https://astro.build) + [Tailwind CSS](https://tailwindcss.com) + [React](https://react.dev)
+Discover, compare, and access 16+ datasets across 10+ countries.
+Built for researchers, by researchers.
 
 ## Features
 
-- **Dataset Catalog** — Sortable, filterable table with search
-- **Dataset Detail Pages** — Per-dataset pages with metadata, BibTeX, and access links
-- **SOTA Leaderboard** — Published results from peer-reviewed papers
+- **Dataset Catalog** — Sortable, filterable table with search across 16 datasets
+- **Dataset Detail Pages** — Per-dataset pages with metadata, BibTeX citation, and access links
+- **SOTA Leaderboard** — Published results from peer-reviewed papers *(in progress)*
 - **Dark/Light Theme** — Toggle or auto-detect
 - **Outbound Click Tracking** — Know which datasets researchers access
 - **Smooth Page Transitions** — Astro ClientRouter
@@ -22,12 +23,12 @@ Discover, compare, and access 15+ datasets across 10+ countries.
 | **Public** | Free download, no registration |
 | **License** | Requires license agreement form |
 | **License (.edu)** | Requires .edu email to request |
-| **License (staff)** | Requires university staff email |
+| **License (Staff)** | Requires university staff email |
 
 ## Development
 
 ```bash
-npm install
+npm install --legacy-peer-deps
 npm run dev      # Start dev server at localhost:4321
 npm run build    # Build static site to dist/
 npm run preview  # Preview built site
@@ -43,6 +44,10 @@ npm run preview  # Preview built site
 ## Contribute
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add datasets or SOTA results via Pull Request.
+
+## Acknowledgments
+
+Special thanks to the [AI VIET NAM (AIO)](https://aivietnam.edu.vn/) community and TA [Truong-Binh Duong](https://github.com/duongtruongbinh).
 
 ## License
 
