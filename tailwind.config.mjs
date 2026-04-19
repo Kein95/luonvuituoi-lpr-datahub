@@ -5,13 +5,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: { DEFAULT: '#0d9488', light: '#5eead4', dark: '#0f766e' },
-        surface: { DEFAULT: '#f8fafc', dark: '#0f172a' },
-        border: { DEFAULT: '#e2e8f0', dark: '#1e293b' },
+        accent: { DEFAULT: '#6366f1', light: '#818cf8', dark: '#4338ca' },
+        surface: { DEFAULT: '#fafafc', dark: '#09090b' },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      boxShadow: {
+        glow: '0 0 20px -5px rgb(99 102 241 / 0.2)',
+        'glow-lg': '0 0 40px -5px rgb(99 102 241 / 0.3)',
+      },
+      animation: {
+        'fade-in': 'fade-in 0.5s ease-out',
+        'slide-up': 'slide-up 0.5s ease-out',
+      },
+      keyframes: {
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        'slide-up': {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },

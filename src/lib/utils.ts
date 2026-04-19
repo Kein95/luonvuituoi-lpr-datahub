@@ -17,6 +17,21 @@ const countryFlags: Record<string, string> = {
   "Taiwan": "🇹🇼",
   "France": "🇫🇷",
   "Vietnam": "🇻🇳",
+  "Japan": "🇯🇵",
+  "USA": "🇺🇸",
+  "India": "🇮🇳",
+  "Germany": "🇩🇪",
+  "Thailand": "🇹🇭",
+  "Indonesia": "🇮🇩",
+  "Malaysia": "🇲🇾",
+  "Turkey": "🇹🇷",
+  "Pakistan": "🇵🇰",
+  "Mexico": "🇲🇽",
+  "Argentina": "🇦🇷",
+  "Spain": "🇪🇸",
+  "Italy": "🇮🇹",
+  "Poland": "🇵🇱",
+  "Romania": "🇷🇴",
 };
 
 export function getFlag(country: string): string {

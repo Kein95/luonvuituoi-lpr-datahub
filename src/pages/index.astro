@@ -5,13 +5,11 @@ import { getCollection } from "astro:content";
 
 const allDatasets = await getCollection("datasets");
 
-// Transform to catalog format
 const datasets = allDatasets.map((entry) => ({
   id: entry.id,
   ...entry.data,
 }));
 
-// Stats
 const totalDatasets = datasets.length;
 const countries = new Set(datasets.map((d) => d.country));
 const publicCount = datasets.filter((d) => d.access === "public").length;
@@ -21,35 +19,43 @@ const multiFrameCount = datasets.filter((d) => d.frames.includes("multi")).lengt
 <Base title="LPR Dataset Hub — ALL-IN-ONE Gateway for LPR Research">
   <!-- Hero Section -->
   <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-[rgb(var(--accent))]/5 to-transparent pointer-events-none"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="absolute inset-0 hero-gradient-bg pointer-events-none"></div>
+    <div class="absolute inset-0 dot-pattern pointer-events-none opacity-30 dark:opacity-20"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
       <div class="text-center max-w-3xl mx-auto">
-        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-          LPR Dataset
-          <span class="text-[rgb(var(--accent))]">Hub</span>
+        <!-- Status Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[rgb(var(--card-border))] bg-[rgb(var(--card))]/80 backdrop-blur-sm text-xs font-medium text-[rgb(var(--muted))] mb-6 animate-fade-in">
+          <span class="w-1.5 h-1.5 rounded-full bg-[rgb(var(--public))] animate-pulse"></span>
+          Open Research Resource &middot; {totalDatasets} Datasets Indexed
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-5 text-balance animate-slide-up">
+          The Dataset Hub for
+          <span class="gradient-text">License Plate Recognition</span>
         </h1>
-        <p class="text-lg text-[rgb(var(--muted))] mb-8 max-w-2xl mx-auto">
-          ALL-IN-ONE gateway for License Plate Recognition research.
-          Discover, compare, and access datasets across {countries.size}+ countries.
+        <p class="text-lg sm:text-xl text-[rgb(var(--muted))] mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up" style="animation-delay: 100ms">
+          Discover, compare, and access {totalDatasets} datasets across {countries.size}+ countries.
+          Built for researchers, by researchers.
         </p>
 
         <!-- Stat Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
-          <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
-            <div class="text-2xl font-bold font-mono text-[rgb(var(--accent))]">{totalDatasets}</div>
-            <div class="text-xs text-[rgb(var(--muted))] mt-1">Datasets</div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-2xl mx-auto mb-4 animate-slide-up" style="animation-delay: 200ms">
+          <div class="stat-card">
+            <div class="text-2xl sm:text-3xl font-bold font-mono gradient-text">{totalDatasets}</div>
+            <div class="text-xs text-[rgb(var(--muted))] mt-1.5 font-medium uppercase tracking-wider">Datasets</div>
           </div>
-          <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
-            <div class="text-2xl font-bold font-mono text-[rgb(var(--accent))]">{countries.size}</div>
-            <div class="text-xs text-[rgb(var(--muted))] mt-1">Countries</div>
+          <div class="stat-card">
+            <div class="text-2xl sm:text-3xl font-bold font-mono gradient-text">{countries.size}</div>
+            <div class="text-xs text-[rgb(var(--muted))] mt-1.5 font-medium uppercase tracking-wider">Countries</div>
           </div>
-          <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
-            <div class="text-2xl font-bold font-mono text-[rgb(var(--accent))]">{publicCount}</div>
-            <div class="text-xs text-[rgb(var(--muted))] mt-1">Public</div>
+          <div class="stat-card">
+            <div class="text-2xl sm:text-3xl font-bold font-mono gradient-text">{publicCount}</div>
+            <div class="text-xs text-[rgb(var(--muted))] mt-1.5 font-medium uppercase tracking-wider">Public</div>
           </div>
-          <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
-            <div class="text-2xl font-bold font-mono text-[rgb(var(--accent))]">{multiFrameCount}</div>
-            <div class="text-xs text-[rgb(var(--muted))] mt-1">Multi-Frame</div>
+          <div class="stat-card">
+            <div class="text-2xl sm:text-3xl font-bold font-mono gradient-text">{multiFrameCount}</div>
+            <div class="text-xs text-[rgb(var(--muted))] mt-1.5 font-medium uppercase tracking-wider">Multi-Frame</div>
           </div>
         </div>
       </div>

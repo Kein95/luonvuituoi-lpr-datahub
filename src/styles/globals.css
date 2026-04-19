@@ -4,32 +4,120 @@
 
 @layer base {
   :root {
-    --bg: 248 250 252;
-    --fg: 15 23 42;
+    --bg: 250 250 252;
+    --bg-subtle: 244 245 249;
+    --fg: 17 24 39;
     --card: 255 255 255;
-    --card-border: 226 232 240;
-    --muted: 100 116 139;
-    --accent: 13 148 136;
-    --accent-light: 94 234 212;
-    --public: 22 163 74;
-    --license: 217 119 6;
-    --staff: 220 38 38;
+    --card-border: 229 231 235;
+    --card-hover: 249 250 251;
+    --muted: 107 114 128;
+    --accent: 99 102 241;
+    --accent-light: 129 140 248;
+    --accent-glow: 99 102 241;
+    --public: 16 185 129;
+    --license: 245 158 11;
+    --staff: 239 68 68;
+    --ring: 99 102 241;
+    --gradient-from: 99 102 241;
+    --gradient-to: 168 85 247;
   }
+
   .dark {
-    --bg: 15 23 42;
-    --fg: 226 232 240;
-    --card: 30 41 59;
-    --card-border: 51 65 85;
-    --muted: 148 163 184;
-    --accent: 94 234 212;
-    --accent-light: 13 148 136;
-    --public: 74 222 128;
+    --bg: 9 9 11;
+    --bg-subtle: 18 18 22;
+    --fg: 244 244 245;
+    --card: 24 24 27;
+    --card-border: 39 39 42;
+    --card-hover: 35 35 38;
+    --muted: 161 161 170;
+    --accent: 129 140 248;
+    --accent-light: 165 180 252;
+    --accent-glow: 99 102 241;
+    --public: 52 211 153;
     --license: 251 191 36;
     --staff: 248 113 113;
+    --ring: 129 140 248;
+    --gradient-from: 129 140 248;
+    --gradient-to: 192 132 252;
   }
+
+  html { scroll-behavior: smooth; }
 
   body {
     @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+
+  ::selection { background: rgb(var(--accent) / 0.2); }
+}
+
+@layer components {
+  .stat-card {
+    @apply relative overflow-hidden rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-5 transition-all duration-300;
+  }
+  .stat-card:hover {
+    @apply border-[rgb(var(--accent))]/30;
+    box-shadow: 0 0 30px -5px rgb(var(--accent-glow) / 0.1);
+  }
+  .stat-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgb(var(--gradient-from)), rgb(var(--gradient-to)));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .stat-card:hover::after { opacity: 1; }
+
+  .table-row {
+    @apply border-b border-[rgb(var(--card-border))]/60 transition-all duration-200;
+  }
+  .table-row:hover {
+    @apply bg-[rgb(var(--accent))]/[0.04];
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, rgb(var(--gradient-from)), rgb(var(--gradient-to)));
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-md;
+  }
+
+  .hero-gradient-bg {
+    background: radial-gradient(ellipse 80% 60% at 50% -20%, rgb(var(--accent) / 0.12), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgb(var(--gradient-to) / 0.08), transparent),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgb(var(--accent) / 0.06), transparent);
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(rgb(var(--muted) / 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .card-glow {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgb(var(--accent) / 0.15), transparent 40%, transparent 60%, rgb(var(--gradient-to) / 0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .card-glow:hover::before { opacity: 1; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
 }

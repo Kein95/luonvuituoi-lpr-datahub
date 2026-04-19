@@ -18,9 +18,10 @@ try {
     <!-- Header -->
     <div class="mb-8 text-center">
       <div class="inline-flex items-center gap-2 mb-4">
-        <h1 class="text-3xl font-bold">SOTA Leaderboard</h1>
-        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[rgb(var(--license))]/15 text-[rgb(var(--license))] text-xs font-bold uppercase tracking-wider animate-pulse">
-          🔄 Updating
+        <h1 class="text-3xl font-bold tracking-tight">SOTA Leaderboard</h1>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[rgb(var(--accent))]/10 text-[rgb(var(--accent))] text-xs font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-[rgb(var(--accent))] animate-pulse"></span>
+          In Progress
         </span>
       </div>
       <p class="text-[rgb(var(--muted))]">
@@ -28,48 +29,63 @@ try {
       </p>
     </div>
 
-    <!-- Updating Banner -->
-    <div class="relative overflow-hidden rounded-2xl border-2 border-dashed border-[rgb(var(--accent))]/30 bg-gradient-to-br from-[rgb(var(--accent))]/5 to-[rgb(var(--card))] p-8 sm:p-12 text-center mb-8">
-      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--license))] to-[rgb(var(--accent))] animate-pulse"></div>
-      <div class="text-5xl mb-4">🏗️</div>
-      <h2 class="text-2xl font-bold mb-3">Leaderboard Under Construction</h2>
-      <p class="text-[rgb(var(--muted))] max-w-lg mx-auto mb-6">
-        We're collecting and verifying SOTA results from published papers across all datasets.
-        Want to speed things up?
-      </p>
-      <a
-        href="https://github.com/Kein95/luonvuituoi-lpr-datahub"
-        target="_blank"
-        rel="noopener"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[rgb(var(--accent))] text-white font-semibold hover:opacity-90 transition-opacity"
-      >
-        ⭐ Submit Results via PR
-      </a>
+    <!-- Status Banner -->
+    <div class="relative overflow-hidden rounded-2xl border border-[rgb(var(--accent))]/20 bg-gradient-to-br from-[rgb(var(--accent))]/5 via-[rgb(var(--card))] to-[rgb(var(--gradient-to))]/5 p-8 sm:p-12 text-center mb-8">
+      <div class="absolute inset-0 dot-pattern opacity-20 pointer-events-none"></div>
+      <div class="relative">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[rgb(var(--accent))]/10 mb-5">
+          <svg class="w-8 h-8 text-[rgb(var(--accent))]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold mb-3 tracking-tight">Leaderboard Coming Soon</h2>
+        <p class="text-[rgb(var(--muted))] max-w-lg mx-auto mb-6 leading-relaxed">
+          We're collecting and verifying SOTA results from published papers across all datasets.
+          Contribute your results to help build the community benchmark.
+        </p>
+        <a
+          href="https://github.com/Kein95/luonvuituoi-lpr-datahub"
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[rgb(var(--accent))] text-white font-semibold hover:shadow-glow-lg hover:brightness-110 transition-all duration-300"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Submit Results via PR
+        </a>
+      </div>
     </div>
 
-    <!-- What we're looking for -->
+    <!-- Info Cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
-        <div class="text-2xl mb-2">📊</div>
-        <h3 class="font-semibold mb-2">Datasets Tracked</h3>
-        <ul class="text-sm text-[rgb(var(--muted))] space-y-1">
-          <li>🇨🇳 CCPD 2019 / 2020</li>
-          <li>🇧🇷 RodoSol-ALPR</li>
-          <li>🇹🇼 AOLP</li>
-          <li>🇺🇦 Ukrainian LP</li>
-          <li>🇮🇷 IR-LPR</li>
-          <li>...and more</li>
+      <div class="stat-card">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[rgb(var(--accent))]/10">
+            <svg class="w-5 h-5 text-[rgb(var(--accent))]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+          </div>
+          <h3 class="font-semibold">Datasets Tracked</h3>
+        </div>
+        <ul class="text-sm text-[rgb(var(--muted))] space-y-1.5 ml-[52px]">
+          <li>CCPD 2019 / 2020</li>
+          <li>RodoSol-ALPR</li>
+          <li>AOLP</li>
+          <li>Ukrainian LP</li>
+          <li>IR-LPR</li>
+          <li class="text-[rgb(var(--accent))]">...and more</li>
         </ul>
       </div>
-      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
-        <div class="text-2xl mb-2">📝</div>
-        <h3 class="font-semibold mb-2">How to Submit</h3>
-        <ul class="text-sm text-[rgb(var(--muted))] space-y-1">
-          <li>✅ Method name & paper reference</li>
-          <li>✅ Publication venue & year</li>
-          <li>✅ Accuracy metric (seq accuracy preferred)</li>
-          <li>✅ Code URL (optional but encouraged)</li>
-          <li>✅ Submit as JSON via GitHub PR</li>
+      <div class="stat-card">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="flex items-center justify-center w-10 h-10 rounded-xl bg-[rgb(var(--public))]/10">
+            <svg class="w-5 h-5 text-[rgb(var(--public))]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-semibold">How to Submit</h3>
+        </div>
+        <ul class="text-sm text-[rgb(var(--muted))] space-y-1.5 ml-[52px]">
+          <li>Method name + paper reference</li>
+          <li>Publication venue + year</li>
+          <li>Accuracy metric (seq. accuracy preferred)</li>
+          <li>Code URL (optional but encouraged)</li>
+          <li>Submit as JSON via GitHub PR</li>
         </ul>
       </div>
     </div>
