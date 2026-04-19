@@ -1,0 +1,51 @@
+---
+import Base from "@/layouts/base.astro";
+import SotaTable from "@/components/sota-table";
+import { getCollection } from "astro:content";
+
+let sotaData: any[] = [];
+try {
+  const sotaCollection = await getCollection("sota");
+  sotaData = sotaCollection.map((entry) => ({
+    id: entry.id,
+    ...entry.data,
+  }));
+} catch { /* no SOTA data yet */ }
+---
+
+<Base title="SOTA Leaderboard — LPR Dataset Hub" description="Published state-of-the-art results for License Plate Recognition datasets.">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">SOTA Leaderboard</h1>
+      <p class="text-[rgb(var(--muted))]">
+        Published results from peer-reviewed papers. Compare methods across datasets.
+      </p>
+    </div>
+
+    {sotaData.length > 0 ? (
+      <SotaTable client:load sotaData={sotaData} />
+    ) : (
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-12 text-center">
+        <p class="text-[rgb(var(--muted))] text-lg mb-4">SOTA data coming soon.</p>
+        <p class="text-sm text-[rgb(var(--muted))]">
+          Help us build the leaderboard — <a href="https://github.com/luonvuituoi/lpr-dataset-hub" target="_blank" rel="noopener" class="text-[rgb(var(--accent))] hover:underline">submit results via PR</a>.
+        </p>
+      </div>
+    )}
+
+    <!-- How to contribute -->
+    <div class="mt-12 rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-6">
+      <h2 class="text-lg font-semibold mb-3">Submit SOTA Results</h2>
+      <p class="text-sm text-[rgb(var(--muted))] mb-4">
+        Add your published results to the leaderboard via GitHub PR. Each entry requires:
+      </p>
+      <ul class="text-sm text-[rgb(var(--muted))] list-disc list-inside space-y-1">
+        <li>Method name and paper reference</li>
+        <li>Publication venue and year</li>
+        <li>Accuracy metric (sequence accuracy preferred)</li>
+        <li>Code URL (optional but encouraged)</li>
+      </ul>
+    </div>
+  </div>
+</Base>

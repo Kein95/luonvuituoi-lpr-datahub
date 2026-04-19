@@ -1,0 +1,12 @@
+{
+  "name": "Ukrainian LP",
+  "country": "Ukraine",
+  "size": "10K synth + 1K real",
+  "frames": "single",
+  "access": "public",
+  "task": "recognition",
+  "annotation": "plate text",
+  "year": 2024,
+  "source_url": "https://zenodo.org/doi/10.5281/zenodo.13342102",
+  "notes": "DDPM diffusion-generated synthetic plates. 24 Ukrainian characters. GDPR-compliant."
+}

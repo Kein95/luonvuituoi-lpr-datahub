@@ -1,0 +1,45 @@
+{
+  "dataset_id": "ccpd-2019",
+  "metric": "sequence_accuracy",
+  "metric_label": "Sequence Accuracy (%)",
+  "results": [
+    {
+      "method": "RPnet",
+      "paper": "Towards End-to-End License Plate Detection and Recognition",
+      "venue": "ECCV 2018",
+      "year": 2018,
+      "accuracy": 95.5,
+      "params_m": null,
+      "code_url": "https://github.com/detectrecog/CCPD",
+      "notes": "End-to-end detection + recognition on CCPD-Base"
+    },
+    {
+      "method": "LPRNet",
+      "paper": "LPRNet: License Plate Recognition via Deep Neural Networks",
+      "venue": "arXiv 2018",
+      "year": 2018,
+      "accuracy": 95.0,
+      "params_m": 0.5,
+      "notes": "Lightweight recognition-only model"
+    },
+    {
+      "method": "STN-OCR",
+      "paper": "STN-OCR: A single Neural Network for Text Detection and Recognition",
+      "venue": "CVPR 2017",
+      "year": 2017,
+      "accuracy": 88.2,
+      "params_m": null,
+      "notes": "Spatial transformer + CTC"
+    },
+    {
+      "method": "CRNN",
+      "paper": "An End-to-End Trainable Neural Network for Image-based Sequence Recognition",
+      "venue": "TPAMI 2017",
+      "year": 2017,
+      "accuracy": 91.5,
+      "params_m": 8.3,
+      "code_url": "https://github.com/bgshih/crnn",
+      "notes": "CNN + BiLSTM + CTC baseline"
+    }
+  ]
+}

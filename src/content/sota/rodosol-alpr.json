@@ -1,0 +1,34 @@
+{
+  "dataset_id": "rodosol-alpr",
+  "metric": "sequence_accuracy",
+  "metric_label": "Sequence Accuracy (%)",
+  "results": [
+    {
+      "method": "Laroca et al.",
+      "paper": "Cross-dataset License Plate Recognition",
+      "venue": "VISAPP 2023",
+      "year": 2023,
+      "accuracy": 96.9,
+      "params_m": null,
+      "notes": "Cross-dataset evaluation"
+    },
+    {
+      "method": "CR-NET",
+      "paper": "A Robust Real-Time Automatic License Plate Recognition",
+      "venue": "IJCNN 2022",
+      "year": 2022,
+      "accuracy": 95.8,
+      "params_m": null,
+      "notes": "Original benchmark"
+    },
+    {
+      "method": "Multi-task ALPR",
+      "paper": "An Efficient and Layout-Independent ALPR",
+      "venue": "IEEE Access 2021",
+      "year": 2021,
+      "accuracy": 93.2,
+      "params_m": null,
+      "notes": "Multi-task approach"
+    }
+  ]
+}

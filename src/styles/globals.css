@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: 248 250 252;
+    --fg: 15 23 42;
+    --card: 255 255 255;
+    --card-border: 226 232 240;
+    --muted: 100 116 139;
+    --accent: 13 148 136;
+    --accent-light: 94 234 212;
+    --public: 22 163 74;
+    --license: 217 119 6;
+    --staff: 220 38 38;
+  }
+  .dark {
+    --bg: 15 23 42;
+    --fg: 226 232 240;
+    --card: 30 41 59;
+    --card-border: 51 65 85;
+    --muted: 148 163 184;
+    --accent: 94 234 212;
+    --accent-light: 13 148 136;
+    --public: 74 222 128;
+    --license: 251 191 36;
+    --staff: 248 113 113;
+  }
+
+  body {
+    @apply bg-[rgb(var(--bg))] text-[rgb(var(--fg))] antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}

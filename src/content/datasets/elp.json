@@ -1,0 +1,12 @@
+{
+  "name": "ELP",
+  "country": "Europe (11 countries)",
+  "size": "~1.3K",
+  "frames": "single",
+  "access": "public",
+  "task": "recognition",
+  "annotation": "plate text + country",
+  "year": 2023,
+  "source_url": "https://github.com/Emirismail/ELP",
+  "notes": "11 European countries, 36 character classes."
+}

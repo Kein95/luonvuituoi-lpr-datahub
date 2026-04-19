@@ -1,0 +1,26 @@
+{
+  "dataset_id": "aolp",
+  "metric": "sequence_accuracy",
+  "metric_label": "Sequence Accuracy (%)",
+  "results": [
+    {
+      "method": "Hsu et al.",
+      "paper": "Application-Oriented License Plate Recognition",
+      "venue": "IEEE Trans. VT 2013",
+      "year": 2013,
+      "accuracy": 89.0,
+      "params_m": null,
+      "notes": "Original benchmark (AC+LE+RP combined)"
+    },
+    {
+      "method": "OpenALPR",
+      "paper": "OpenALPR: Open Source ALPR Library",
+      "venue": "GitHub 2015",
+      "year": 2015,
+      "accuracy": 85.5,
+      "params_m": null,
+      "code_url": "https://github.com/openalpr/openalpr",
+      "notes": "Open source baseline"
+    }
+  ]
+}

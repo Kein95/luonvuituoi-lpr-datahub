@@ -1,0 +1,237 @@
+---
+import Base from "@/layouts/base.astro";
+import { getCollection } from "astro:content";
+import { getFlag } from "@/lib/utils";
+
+export async function getStaticPaths() {
+  const datasets = await getCollection("datasets");
+  return datasets.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const d = entry.data;
+const flag = getFlag(d.country);
+
+const accessStyles: Record<string, { label: string; colorClass: string }> = {
+  public: { label: "Public", colorClass: "bg-[rgb(var(--public))]/15 text-[rgb(var(--public))]" },
+  license: { label: "License Required", colorClass: "bg-[rgb(var(--license))]/15 text-[rgb(var(--license))]" },
+  "license-edu": { label: ".edu Email Required", colorClass: "bg-[rgb(var(--license))]/15 text-[rgb(var(--license))]" },
+  "license-staff": { label: "Staff Only", colorClass: "bg-[rgb(var(--staff))]/15 text-[rgb(var(--staff))]" },
+};
+
+const badge = accessStyles[d.access] || accessStyles.license;
+
+// Get related datasets (same country or same task)
+const allDatasets = await getCollection("datasets");
+const related = allDatasets
+  .filter((other) => other.id !== entry.id && (other.data.country === d.country || other.data.task === d.task))
+  .slice(0, 4);
+
+// Try to load SOTA data
+let sotaResults: any[] = [];
+try {
+  const sotaCollection = await getCollection("sota");
+  const sotaEntry = sotaCollection.find((s) => s.data.dataset_id === entry.id);
+  if (sotaEntry) {
+    sotaResults = sotaEntry.data.results
+      .sort((a, b) => b.accuracy - a.accuracy)
+      .slice(0, 5);
+  }
+} catch { /* no SOTA data yet */ }
+---
+
+<Base title={`${d.name} — LPR Dataset Hub`} description={d.description || d.notes || `${d.name} dataset for license plate recognition`}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <!-- Breadcrumb -->
+    <a href="/" class="inline-flex items-center gap-1 text-sm text-[rgb(var(--muted))] hover:text-[rgb(var(--accent))] transition-colors mb-6" data-astro-prefetch>
+      ← Back to Catalog
+    </a>
+
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-3xl font-bold mb-2">
+          <span class="mr-2">{flag}</span>{d.name}
+        </h1>
+        <p class="text-[rgb(var(--muted))]">
+          {d.task} · {d.country} · {d.year}
+        </p>
+      </div>
+      <span class={`text-sm font-semibold px-3 py-1 rounded-full whitespace-nowrap ${badge.colorClass}`}>
+        {badge.label}
+      </span>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
+        <div class="text-lg font-bold font-mono">{d.size || "—"}</div>
+        <div class="text-xs text-[rgb(var(--muted))] mt-1">Images</div>
+      </div>
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
+        <div class="text-lg font-bold font-mono capitalize">{d.frames}</div>
+        <div class="text-xs text-[rgb(var(--muted))] mt-1">Frame Type</div>
+      </div>
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
+        <div class="text-lg font-bold font-mono">{d.classes || "—"}</div>
+        <div class="text-xs text-[rgb(var(--muted))] mt-1">Classes</div>
+      </div>
+      <div class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4">
+        <div class="text-lg font-bold font-mono">{d.annotation}</div>
+        <div class="text-xs text-[rgb(var(--muted))] mt-1">Annotation</div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold mb-3">Description</h2>
+      <p class="text-[rgb(var(--muted))] leading-relaxed">
+        {d.description || d.notes || "No description available."}
+      </p>
+    </section>
+
+    <!-- Access / Download Links -->
+    <section class="mb-8">
+      <h2 class="text-lg font-semibold mb-3">Access</h2>
+      <div class="flex flex-wrap gap-3">
+        {d.source_url && (
+          <a
+            href={d.source_url}
+            target="_blank"
+            rel="noopener"
+            class="outbound-link inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgb(var(--accent))] text-[rgb(var(--accent))] text-sm font-medium hover:bg-[rgb(var(--accent))]/10 transition-colors"
+            data-dataset={d.name}
+            data-type="source"
+          >
+            Source Repository ↗
+          </a>
+        )}
+        {d.paper_url && (
+          <a
+            href={d.paper_url}
+            target="_blank"
+            rel="noopener"
+            class="outbound-link inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgb(var(--card-border))] text-[rgb(var(--muted))] text-sm font-medium hover:text-[rgb(var(--fg))] hover:border-[rgb(var(--fg))]/30 transition-colors"
+            data-dataset={d.name}
+            data-type="paper"
+          >
+            Paper ↗
+          </a>
+        )}
+        {d.download_url && (
+          <a
+            href={d.download_url}
+            target="_blank"
+            rel="noopener"
+            class="outbound-link inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[rgb(var(--card-border))] text-[rgb(var(--muted))] text-sm font-medium hover:text-[rgb(var(--fg))] hover:border-[rgb(var(--fg))]/30 transition-colors"
+            data-dataset={d.name}
+            data-type="download"
+          >
+            Download ↗
+          </a>
+        )}
+      </div>
+    </section>
+
+    <!-- BibTeX Citation -->
+    {d.bibtex && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold mb-3">Citation</h2>
+        <div class="relative rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4 overflow-x-auto">
+          <pre class="text-xs font-mono text-[rgb(var(--muted))] whitespace-pre-wrap" id="bibtex-content">{d.bibtex}</pre>
+          <button
+            id="copy-bibtex"
+            class="absolute top-3 right-3 px-3 py-1 text-xs font-medium rounded-md border border-[rgb(var(--card-border))] text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))] hover:bg-[rgb(var(--card-border))]/30 transition-colors"
+          >
+            Copy
+          </button>
+        </div>
+      </section>
+    )}
+
+    <!-- SOTA Preview -->
+    {sotaResults.length > 0 && (
+      <section class="mb-8">
+        <div class="flex items-center justify-between mb-3">
+          <h2 class="text-lg font-semibold">SOTA Results</h2>
+          <a href="/leaderboard" class="text-sm text-[rgb(var(--accent))] hover:underline" data-astro-prefetch>
+            View full leaderboard →
+          </a>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-[rgb(var(--card-border))]">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-[rgb(var(--card))] border-b border-[rgb(var(--card-border))]">
+                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">#</th>
+                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Method</th>
+                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Venue</th>
+                <th class="px-4 py-2 text-right text-xs font-semibold text-[rgb(var(--muted))]">Accuracy</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sotaResults.map((r, i) => (
+                <tr class="border-b border-[rgb(var(--card-border))]">
+                  <td class="px-4 py-2 font-mono text-xs">{i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : i + 1}</td>
+                  <td class="px-4 py-2 font-medium">{r.method}</td>
+                  <td class="px-4 py-2 text-[rgb(var(--muted))]">{r.venue}</td>
+                  <td class="px-4 py-2 text-right font-mono font-semibold">{r.accuracy.toFixed(1)}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    )}
+
+    <!-- Related Datasets -->
+    {related.length > 0 && (
+      <section class="mb-8">
+        <h2 class="text-lg font-semibold mb-3">Related Datasets</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {related.map((r) => (
+            <a
+              href={`/datasets/${r.id}`}
+              class="rounded-xl border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] p-4 hover:border-[rgb(var(--accent))]/50 transition-colors block"
+              data-astro-prefetch
+            >
+              <div class="font-medium mb-1">{getFlag(r.data.country)} {r.data.name}</div>
+              <div class="text-xs text-[rgb(var(--muted))]">{r.data.country} · {r.data.size} · {r.data.year}</div>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+
+  <!-- Scripts -->
+  <script is:inline>
+    // BibTeX copy
+    document.getElementById("copy-bibtex")?.addEventListener("click", function () {
+      const text = document.getElementById("bibtex-content")?.textContent;
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          this.textContent = "Copied!";
+          setTimeout(() => { this.textContent = "Copy"; }, 2000);
+        });
+      }
+    });
+
+    // Track outbound clicks
+    document.querySelectorAll(".outbound-link").forEach((link) => {
+      link.addEventListener("click", function () {
+        try {
+          const dataset = this.getAttribute("data-dataset");
+          const type = this.getAttribute("data-type");
+          const url = this.href;
+          const clicks = JSON.parse(localStorage.getItem("lpr_clicks") || "[]");
+          clicks.push({ dataset, type, url, time: Date.now() });
+          if (clicks.length > 500) clicks.splice(0, clicks.length - 500);
+          localStorage.setItem("lpr_clicks", JSON.stringify(clicks));
+        } catch { /* silent */ }
+      });
+    });
+  </script>
+</Base>

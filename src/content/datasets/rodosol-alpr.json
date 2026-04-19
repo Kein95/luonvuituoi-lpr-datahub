@@ -1,0 +1,12 @@
+{
+  "name": "RodoSol-ALPR",
+  "country": "Brazil",
+  "size": "20K",
+  "frames": "single",
+  "access": "license",
+  "task": "detection + recognition",
+  "annotation": "4 corners + plate text",
+  "year": 2022,
+  "source_url": "https://github.com/raysonlaroca/rodosol-alpr-dataset",
+  "notes": "Highway speed-enforcement. First dataset with Mercosur plates. License agreement required (strict)."
+}

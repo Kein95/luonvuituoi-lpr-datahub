@@ -1,0 +1,12 @@
+{
+  "name": "Realistic LP Restoration",
+  "country": "Korea",
+  "size": "200 sequences",
+  "frames": "multi",
+  "access": "public",
+  "task": "restoration + recognition",
+  "annotation": "LR-HR pairs + plate text",
+  "year": 2025,
+  "source_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
+  "notes": "Multi-frame LP restoration benchmark (RLPR). Optical flow alignment."
+}

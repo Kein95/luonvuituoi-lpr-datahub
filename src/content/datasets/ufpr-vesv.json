@@ -1,0 +1,12 @@
+{
+  "name": "UFPR-VeSV",
+  "country": "Brazil",
+  "size": "—",
+  "frames": "single",
+  "access": "license-edu",
+  "task": "recognition + vehicle color",
+  "annotation": "plate text + vehicle color",
+  "year": 2024,
+  "source_url": null,
+  "notes": "Vehicle surveillance. Requires .edu email to request access."
+}

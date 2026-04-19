@@ -1,0 +1,12 @@
+{
+  "name": "LP-2025",
+  "country": "Taiwan",
+  "size": "67K plates",
+  "frames": "single",
+  "access": "license",
+  "task": "recognition",
+  "annotation": "4 corners + plate text",
+  "year": 2025,
+  "source_url": null,
+  "notes": "1.87 plates/image avg. Introduced with Style-Preserving Generator (SPG). License agreement required."
+}

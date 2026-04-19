@@ -1,0 +1,12 @@
+{
+  "name": "CCPD 2019",
+  "country": "China",
+  "size": "250K+",
+  "frames": "single",
+  "access": "public",
+  "task": "detection + recognition",
+  "annotation": "vertices + plate text",
+  "year": 2019,
+  "source_url": "https://github.com/detectrecog/ccpd",
+  "notes": "8 difficulty subsets (Base, Blur, Challenge, DB, FN, Rotate, Tilt, Weather). Largest Chinese LP dataset."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "UFPR-SR-Plates",
+  "country": "Brazil",
+  "size": "10K pairs",
+  "frames": "single",
+  "access": "license-staff",
+  "task": "super-resolution + recognition",
+  "annotation": "LR-HR pairs + plate text",
+  "year": 2025,
+  "source_url": "https://github.com/valfride/UFPR-SR-Plates",
+  "notes": "Paired LR-HR real traffic plates. Requires university staff email to request."
+}

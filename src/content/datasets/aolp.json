@@ -1,0 +1,12 @@
+{
+  "name": "AOLP",
+  "country": "Taiwan",
+  "size": "~1.4K",
+  "frames": "single",
+  "access": "license",
+  "task": "detection + recognition",
+  "annotation": "bounding box + plate text",
+  "year": 2013,
+  "source_url": null,
+  "notes": "Application-Oriented LP. 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). License agreement required."
+}

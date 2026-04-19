@@ -1,0 +1,12 @@
+{
+  "name": "XLPSR / ICIP 2026",
+  "country": "France",
+  "size": "~4.7K frames",
+  "frames": "multi (10 per seq)",
+  "access": "license",
+  "task": "super-resolution + recognition",
+  "annotation": "detection coords + plate text",
+  "year": 2026,
+  "source_url": "https://xlim-perception.github.io/icip_xlpsr/dataset.html",
+  "notes": "17 cameras, 10-100m distance. Challenge dataset. License agreement required."
+}

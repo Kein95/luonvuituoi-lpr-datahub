@@ -1,0 +1,12 @@
+{
+  "name": "Bangladesh LP",
+  "country": "Bangladesh",
+  "size": "—",
+  "frames": "single",
+  "access": "public",
+  "task": "detection + recognition",
+  "annotation": "bounding box + plate text",
+  "year": 2024,
+  "source_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
+  "notes": "Kaggle dataset. Bangladeshi plate format."
+}
