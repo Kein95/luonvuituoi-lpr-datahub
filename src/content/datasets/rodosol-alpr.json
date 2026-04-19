@@ -8,5 +8,11 @@
   "annotation": "4 corners + plate text",
   "year": 2022,
   "source_url": "https://github.com/raysonlaroca/rodosol-alpr-dataset",
-  "notes": "Highway speed-enforcement. First dataset with Mercosur plates. License agreement required (strict)."
+  "notes": "Highway speed-enforcement. First dataset with Mercosur plates. License agreement required (strict).",
+  "description": "Real Brazilian toll highway dataset (RodoSol concession). 20K images captured 24/7. First cross-generalization benchmark with Mercosur format.",
+  "classes": 34,
+  "resolution": "1280x720 px",
+  "license_type": "Academic Non-Commercial",
+  "paper_url": "https://github.com/raysonlaroca/rodosol-alpr-dataset",
+  "bibtex": "@inproceedings{laroca2022cross,\n  title={On the Cross-Dataset Generalization in License Plate Recognition},\n  author={Laroca, Rayson and Cardoso, Evair V and Lucio, David R and Estevam, Valter and Menotti, David},\n  booktitle={VISAPP},\n  pages={166--178},\n  year={2022}\n}"
 }

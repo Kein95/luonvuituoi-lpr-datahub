@@ -8,5 +8,11 @@
   "annotation": "4 corners + plate text + vehicle info",
   "year": 2018,
   "source_url": "https://github.com/raysonlaroca/ufpr-alpr-dataset",
-  "notes": "Real traffic scenes. 150 vehicles, 30 frames each. License agreement required."
+  "notes": "Real traffic scenes. 150 vehicles, 30 frames each. License agreement required.",
+  "description": "Foundational Brazilian ALPR dataset. 4.5K real-world images (150 vehicles x 30 frames). Standard benchmark for cross-dataset generalization.",
+  "classes": 34,
+  "resolution": "1920x1080 px",
+  "license_type": "Academic Non-Commercial",
+  "paper_url": "https://github.com/raysonlaroca/ufpr-alpr-dataset",
+  "bibtex": "@inproceedings{laroca2018robust,\n  title={A Robust Real-Time Automatic License Plate Recognition Based on the YOLO Detector},\n  author={Laroca, Rayson and Severo, Evair V and Zanlorensi, Junior and others},\n  booktitle={IJCNN},\n  pages={1--10},\n  year={2018}\n}"
 }

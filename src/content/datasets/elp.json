@@ -8,5 +8,11 @@
   "annotation": "plate text + country",
   "year": 2023,
   "source_url": "https://github.com/Emirismail/ELP",
-  "notes": "11 European countries, 36 character classes."
+  "notes": "11 European countries, 36 character classes.",
+  "description": "Cross-country dataset spanning 11 European nations with 36 character classes. Highly diverse plate formats + multilingual text.",
+  "classes": 36,
+  "resolution": "~600x100 px avg",
+  "license_type": "CC BY-NC 4.0",
+  "paper_url": "https://github.com/Emirismail/ELP",
+  "bibtex": "@dataset{emirismail_elp_2023,\n  title={European License Plates Dataset (ELP): A Multi-Country Benchmark},\n  author={Emirismail, Amir and Others},\n  year={2023},\n  howpublished={\\url{https://github.com/Emirismail/ELP}}\n}"
 }

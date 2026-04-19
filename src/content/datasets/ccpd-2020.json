@@ -8,5 +8,11 @@
   "annotation": "vertices + plate text",
   "year": 2020,
   "source_url": "https://github.com/detectrecog/ccpd",
-  "notes": "Green (new energy) license plates subset."
+  "notes": "Green (new energy) license plates subset.",
+  "description": "CCPD subset focused on new-energy vehicle plates (electric/hybrid). Green-colored background. Ideal for multi-type LP recognition systems.",
+  "classes": 68,
+  "resolution": "Same as CCPD 2019",
+  "license_type": "MIT",
+  "paper_url": "https://github.com/detectrecog/CCPD",
+  "bibtex": "@inproceedings{xu2018towards,\n  title={Towards End-to-End License Plate Detection and Recognition: A Large Dataset and Baseline},\n  author={Xu, Zhenbo and Yang, Wei and Meng, Ajin and Lu, Nanxue and Huang, Huan},\n  booktitle={ECCV},\n  pages={255--271},\n  year={2018}\n}"
 }

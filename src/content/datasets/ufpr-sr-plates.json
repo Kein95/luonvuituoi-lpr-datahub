@@ -8,5 +8,11 @@
   "annotation": "LR-HR pairs + plate text",
   "year": 2025,
   "source_url": "https://github.com/valfride/UFPR-SR-Plates",
-  "notes": "Paired LR-HR real traffic plates. Requires university staff email to request."
+  "notes": "Paired LR-HR real traffic plates. Requires university staff email to request.",
+  "description": "Paired LR-HR real traffic license plates for super-resolution. 10K LR-HR pairs from real highway scenes. 10x upscaling target.",
+  "classes": 26,
+  "resolution": "LR 32x96 -> HR 320x960 px",
+  "license_type": "Academic Staff Only",
+  "paper_url": "https://github.com/valfride/UFPR-SR-Plates",
+  "bibtex": "@article{silva2025ufpr_sr_plates,\n  title={UFPR-SR-Plates: A Benchmark for Real-World License Plate Super-Resolution},\n  author={Silva, Valfrido and Others},\n  journal={Neurocomputing},\n  year={2025}\n}"
 }

@@ -8,5 +8,11 @@
   "annotation": "plate text",
   "year": 2022,
   "source_url": "https://github.com/mut-deep/IR-LPR",
-  "notes": "Farsi license plates."
+  "notes": "Farsi license plates.",
+  "description": "Farsi license plate dataset for Persian-script recognition. 20K+ car images from Iranian traffic infrastructure. First benchmark for Farsi plates.",
+  "classes": 30,
+  "resolution": "Varies (car images)",
+  "license_type": "GPL-3.0",
+  "paper_url": "https://arxiv.org/abs/2209.04680",
+  "bibtex": "@article{rahmani2022ir_lpr,\n  title={IR-LPR: Large Scale Iranian License Plate Recognition Dataset},\n  author={Rahmani, Mahdi and Sabaghian, Melika and others},\n  journal={arXiv:2209.04680},\n  year={2022}\n}"
 }

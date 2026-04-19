@@ -8,5 +8,11 @@
   "annotation": "plate text + vehicle color",
   "year": 2024,
   "source_url": "https://github.com/Lima001/UFPR-VeSV-Dataset",
-  "notes": "Vehicle surveillance. Requires .edu email to request access."
+  "notes": "Vehicle surveillance. Requires .edu email to request access.",
+  "description": "Multi-attribute vehicle surveillance dataset. 24.9K images with color, model, make annotations alongside plate text. Enables vehicle-aware LP recognition.",
+  "classes": 26,
+  "resolution": "~480-720px typical",
+  "license_type": "Academic (.edu required)",
+  "paper_url": "https://github.com/Lima001/UFPR-VeSV-Dataset",
+  "bibtex": "@article{lima2026toward_vesv,\n  title={Toward Unified Fine-Grained Vehicle Classification and Automatic License Plate Recognition},\n  author={Lima, GE and Nascimento, V and Santos, E and Nascimento Jr, E and Laroca, R and Menotti, D},\n  journal={JBCS},\n  volume={32},\n  number={1},\n  year={2026}\n}"
 }

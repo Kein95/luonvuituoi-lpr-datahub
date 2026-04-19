@@ -8,5 +8,11 @@
   "annotation": "plate text",
   "year": 2024,
   "source_url": "https://zenodo.org/doi/10.5281/zenodo.13342102",
-  "notes": "DDPM diffusion-generated synthetic plates. 24 Ukrainian characters. GDPR-compliant."
+  "notes": "DDPM diffusion-generated synthetic plates. 24 Ukrainian characters. GDPR-compliant.",
+  "description": "GDPR-compliant dataset combining 10K diffusion-generated (DDPM) plates and 1K real-world samples. Designed for transfer learning to Cyrillic script recognition.",
+  "classes": 24,
+  "resolution": "416x128 px avg",
+  "license_type": "CC BY 4.0",
+  "paper_url": "https://zenodo.org/doi/10.5281/zenodo.13342102",
+  "bibtex": "@misc{ukrainian_lp_2024,\n  title={Synthetic Ukrainian License Plate Dataset via Diffusion Models},\n  author={Ku-DML Research Group},\n  year={2024},\n  howpublished={\\url{https://zenodo.org/doi/10.5281/zenodo.13342102}}\n}"
 }

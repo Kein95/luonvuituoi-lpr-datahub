@@ -8,5 +8,11 @@
   "annotation": "plate text",
   "year": 2026,
   "source_url": "https://icpr26lrlpr.github.io/",
-  "notes": "Low-resolution multi-frame LP recognition challenge. License agreement required."
+  "notes": "Low-resolution multi-frame LP recognition challenge. License agreement required.",
+  "description": "ICPR 2026 official challenge. Multi-frame (10 per track) low-resolution LP recognition. Two scenarios: A (full annotations) and B (text + layout only).",
+  "classes": 36,
+  "resolution": "LR + HR frame pairs (dimensions not published)",
+  "license_type": "Non-Commercial Research (.edu required)",
+  "paper_url": "https://icpr26lrlpr.github.io/",
+  "bibtex": "@article{nascimento2025icpr2026_lrlpr,\n  title={Toward Advancing License Plate Super-Resolution in Real-World Scenarios: A Dataset and Benchmark},\n  author={Nascimento, V and Almeida, D and Laroca, R and others},\n  journal={JBCS},\n  volume={31},\n  number={1},\n  pages={435--449},\n  year={2025}\n}"
 }

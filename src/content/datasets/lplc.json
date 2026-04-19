@@ -8,5 +8,11 @@
   "annotation": "4 legibility classes + plate text",
   "year": 2025,
   "source_url": "https://github.com/lmlwojcik/lplc-dataset",
-  "notes": "License Plate Legibility Classification. 4 classes: Perfect/Good/Poor/Illegible."
+  "notes": "License Plate Legibility Classification. 4 classes: Perfect/Good/Poor/Illegible.",
+  "description": "License Plate Legibility Classification dataset. 12.7K plates across 4 readability levels (Perfect/Good/Poor/Illegible). Novel task: legibility prediction prior to OCR.",
+  "classes": 4,
+  "resolution": "~150-400px typical",
+  "license_type": "Academic Non-Commercial",
+  "paper_url": "https://github.com/lmlwojcik/lplc-dataset",
+  "bibtex": "@article{wojcik2025lplc,\n  title={{LPLC}: A Dataset for License Plate Legibility Classification},\n  author={Wojcik, L and Lima, GE and Nascimento, V and Nascimento Jr, E and Laroca, R and Menotti, D},\n  journal={SIBGRAPI},\n  year={2025}\n}"
 }

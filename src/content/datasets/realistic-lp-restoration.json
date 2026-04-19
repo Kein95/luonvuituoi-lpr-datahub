@@ -8,5 +8,11 @@
   "annotation": "LR-HR pairs + plate text",
   "year": 2025,
   "source_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
-  "notes": "Multi-frame LP restoration benchmark (RLPR). Optical flow alignment."
+  "notes": "Multi-frame LP restoration benchmark (RLPR). Optical flow alignment.",
+  "description": "Multi-frame super-resolution benchmark with LR-HR aligned pairs. Real traffic scenes captured at 10-100m distances. Provides optical flow guidance.",
+  "classes": 24,
+  "resolution": "LR 32x64 -> HR 256x512 px",
+  "license_type": "CC BY 4.0",
+  "paper_url": "https://data.mendeley.com/datasets/4rs5wpvckz/2",
+  "bibtex": "@article{kwon2025realistic_lp_restoration,\n  title={Realistic License Plate Restoration and Recognition in the Wild},\n  author={Kwon, Sung-Ho and Park, Min-Gyu and others},\n  journal={IJCV},\n  year={2025}\n}"
 }

@@ -8,5 +8,11 @@
   "annotation": "bounding box + plate text",
   "year": 2024,
   "source_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
-  "notes": "Kaggle dataset. Bangladeshi plate format."
+  "notes": "Kaggle dataset. Bangladeshi plate format.",
+  "description": "Kaggle dataset for Bengali license plate recognition. Standard Bangladeshi plate format (3 letters + 4 digits). Suitable for transfer learning.",
+  "classes": 20,
+  "resolution": "~300-400px typical",
+  "license_type": "CC BY-SA 4.0",
+  "paper_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
+  "bibtex": "@dataset{bangladesh_lp_kaggle,\n  title={Bangladeshi License Plate Recognition Dataset},\n  author={Hossain, Syed Nahin},\n  year={2024}\n}"
 }

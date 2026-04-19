@@ -8,5 +8,11 @@
   "annotation": "bounding box + plate text",
   "year": 2013,
   "source_url": "https://github.com/AvLab-CV/AOLP",
-  "notes": "Application-Oriented LP. 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). License agreement required."
+  "notes": "Application-Oriented LP. 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). License agreement required.",
+  "description": "Foundational dataset (2012) with 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). Classic benchmark for robustness across operational scenarios.",
+  "classes": 24,
+  "resolution": "~320x96 px avg",
+  "license_type": "Custom Academic",
+  "paper_url": "https://github.com/AvLab-CV/AOLP",
+  "bibtex": "@article{hsu2012application,\n  title={Application-Oriented License Plate Recognition},\n  author={Hsu, Gee-Sern and Chen, Jiun-Chang and Chung, Yu-Zu},\n  journal={IEEE TVT},\n  volume={61},\n  number={8},\n  pages={3506--3517},\n  year={2012}\n}"
 }

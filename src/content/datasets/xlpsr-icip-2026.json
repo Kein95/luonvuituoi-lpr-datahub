@@ -8,5 +8,11 @@
   "annotation": "detection coords + plate text",
   "year": 2026,
   "source_url": "https://xlim-perception.github.io/icip_xlpsr/dataset.html",
-  "notes": "17 cameras, 10-100m distance. Challenge dataset. License agreement required."
+  "notes": "17 cameras, 10-100m distance. Challenge dataset. License agreement required.",
+  "description": "ANR-IMPROVED challenge dataset for multi-frame LP super-resolution. 17 fixed cameras, real-world highway + urban scenes. Each sequence: 10 LR frames.",
+  "classes": 26,
+  "resolution": "LR varies (video compression)",
+  "license_type": "Research Agreement",
+  "paper_url": "https://xlim-perception.github.io/icip_xlpsr/dataset.html",
+  "bibtex": "@misc{xlpsr_icip2026,\n  title={XLPSR Challenge: Extended Low-Resolution License Plate Super-Resolution},\n  author={ANR-IMPROVED Project},\n  howpublished={\\url{https://xlim-perception.github.io/icip_xlpsr/dataset.html}},\n  year={2026}\n}"
 }
