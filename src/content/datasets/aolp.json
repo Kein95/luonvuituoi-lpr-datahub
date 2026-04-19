@@ -13,6 +13,6 @@
   "classes": 24,
   "resolution": "~320x96 px avg",
   "license_type": "Custom Academic",
-  "paper_url": "https://github.com/AvLab-CV/AOLP",
+  "paper_url": "https://ieeexplore.ieee.org/abstract/document/6339122",
   "bibtex": "@article{hsu2012application,\n  title={Application-Oriented License Plate Recognition},\n  author={Hsu, Gee-Sern and Chen, Jiun-Chang and Chung, Yu-Zu},\n  journal={IEEE TVT},\n  volume={61},\n  number={8},\n  pages={3506--3517},\n  year={2012}\n}"
 }
