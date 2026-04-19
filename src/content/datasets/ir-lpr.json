@@ -10,7 +10,7 @@
   "source_url": "https://github.com/mut-deep/IR-LPR",
   "notes": "Farsi plates. Multi-config.",
   "description": "Farsi license plate dataset for Persian-script recognition. 20K+ car images from Iranian traffic infrastructure. First benchmark for Farsi plates.",
-  "classes": 30,
+  "classes": 31,
   "resolution": "Varies (car images)",
   "license_type": "GPL-3.0",
   "paper_url": "https://arxiv.org/abs/2209.04680",
