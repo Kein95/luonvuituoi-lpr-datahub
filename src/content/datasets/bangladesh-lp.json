@@ -6,13 +6,13 @@
   "access": "public",
   "task": "Detection",
   "annotation": "Pascal VOC XML (bounding box)",
-  "year": 2024,
+  "year": 2023,
   "source_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
   "notes": "Roboflow. Detection only.",
   "description": "Bangladeshi license plate localization from Kaggle/Roboflow. 6,517 images with Pascal VOC XML bounding box annotations. Detection only, no plate text.",
   "classes": 1,
   "resolution": "960x708 typical",
   "license_type": "CC BY-SA 4.0",
-  "paper_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
-  "bibtex": "@dataset{bangladesh_lp_kaggle,\n  title={Bangladeshi License Plate Recognition Dataset},\n  author={Hossain, Syed Nahin},\n  year={2024}\n}"
+  "paper_url": "https://doi.org/10.34740/kaggle/dsv/5885535",
+  "bibtex": "@misc{syed_nahin_hossain_md_zahim_hassan_2023,\n  title={Bangladeshi License Plate Recognition Dataset},\n  url={https://www.kaggle.com/dsv/5885535},\n  DOI={10.34740/KAGGLE/DSV/5885535},\n  publisher={Kaggle},\n  author={Syed Nahin Hossain and Md. Zahim Hassan},\n  year={2023}\n}"
 }
