@@ -13,6 +13,6 @@
   "classes": 28,
   "resolution": "4x8 to 1850x1774 px (highly variable)",
   "license_type": "Academic License",
-  "paper_url": "https://github.com/AvLab-CV/LP2025",
+  "paper_url": "https://ieeexplore.ieee.org/document/11072464",
   "bibtex": "@article{hsu2025lp2025,\n  title={Style-Preserving Generator for Synthetic License Plate Recognition},\n  author={Hsu, Gee-Sern Jison and Lin, Wei-Jun and Hsieh, Wei-Chun and others},\n  journal={IEEE TCSVT},\n  year={2025}\n}"
 }
