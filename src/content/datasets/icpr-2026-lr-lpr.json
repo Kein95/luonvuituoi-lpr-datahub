@@ -13,6 +13,6 @@
   "classes": 36,
   "resolution": "LR + HR frame pairs (dimensions not published)",
   "license_type": "Non-Commercial Research (.edu required)",
-  "paper_url": "https://icpr26lrlpr.github.io/",
-  "bibtex": "@article{nascimento2025icpr2026_lrlpr,\n  title={Toward Advancing License Plate Super-Resolution in Real-World Scenarios: A Dataset and Benchmark},\n  author={Nascimento, V and Almeida, D and Laroca, R and others},\n  journal={JBCS},\n  volume={31},\n  number={1},\n  pages={435--449},\n  year={2025}\n}"
+  "paper_url": "https://arxiv.org/abs/2604.22506",
+  "bibtex": "@misc{laroca2026icpr2026competitionlowresolution,\n  title={ICPR 2026 Competition on Low-Resolution License Plate Recognition},\n  author={Rayson Laroca and Valfride Nascimento and Donggun Kim and Sanghyeok Chung and Subin Bae and Uihwan Seo and Seungsang Oh and Chi M. Phung and Minh G. Vo and Xingsong Ye and Yongkun Du and Yuchen Su and Zhineng Chen and Sunhee Heo and Hyangwoo Lee and Kihyun Na and Khanh V. Vu Nguyen and Sang T. Pham and Duc N. N. Phung and Trong P. Le and Vy N. Vo Tran and David Menotti},\n  year={2026},\n  eprint={2604.22506},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2604.22506}\n}"
 }
