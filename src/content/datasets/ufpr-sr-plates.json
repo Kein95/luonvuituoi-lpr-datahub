@@ -10,7 +10,7 @@
   "source_url": "https://github.com/valfride/UFPR-SR-Plates",
   "notes": "5 LR + 5 HR per track.",
   "description": "100K LP images in 10K tracks from real-world surveillance. Each track: 5 LR frames (vehicle far) + 5 HR frames (vehicle close). Sequential capture for multi-frame super-resolution.",
-  "classes": 26,
+  "classes": 36,
   "resolution": "LR (far from camera) + HR (close to camera), real surveillance",
   "license_type": "Academic Staff Only",
   "paper_url": "https://arxiv.org/abs/2505.06393",

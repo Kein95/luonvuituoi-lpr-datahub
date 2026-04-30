@@ -10,7 +10,7 @@
   "source_url": "https://github.com/AvLab-CV/AOLP",
   "notes": "3 subsets: AC, LE, RP.",
   "description": "Foundational dataset (2012) with 3 subsets: AC (access control), LE (law enforcement), RP (road patrol). Classic benchmark for robustness across operational scenarios.",
-  "classes": 24,
+  "classes": 35,
   "resolution": "~320x96 px avg",
   "license_type": "Custom Academic",
   "paper_url": "https://ieeexplore.ieee.org/abstract/document/6339122",
