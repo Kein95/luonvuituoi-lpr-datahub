@@ -1,7 +1,7 @@
 {
   "name": "ICPR 2026 LR-LPR",
   "country": "Brazil",
-  "size": "20K tracks (~200K images)",
+  "size": "23K tracks (~230K images)",
   "frames": "Multi",
   "access": "license",
   "task": "Recognition",
@@ -9,7 +9,7 @@
   "year": 2026,
   "source_url": "https://icpr26lrlpr.github.io/",
   "notes": "ICPR 2026 challenge. 2 scenarios.",
-  "description": "ICPR 2026 official challenge. 20K tracks (10K Scenario A + 10K Scenario B). Each track: 5 LR + 5 HR frames. Total ~200K images from real-world surveillance.",
+  "description": "ICPR 2026 official challenge. 23K tracks (20K train + 3K test). Train: 10K Scenario-A (5K Brazilian + 5K Mercosur) + 10K Scenario-B (2K Brazilian + 8K Mercosur). Each track: 5 LR + 5 HR frames. Total ~230K images from real-world surveillance.",
   "classes": 36,
   "resolution": "LR + HR frame pairs (dimensions not published)",
   "license_type": "Non-Commercial Research (.edu required)",
