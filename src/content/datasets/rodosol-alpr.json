@@ -10,7 +10,7 @@
   "source_url": "https://github.com/raysonlaroca/rodosol-alpr-dataset",
   "notes": "Highway toll. Mercosul format.",
   "description": "Real Brazilian toll highway dataset (RodoSol concession). 20K images captured 24/7. First cross-generalization benchmark with Mercosur format.",
-  "classes": 34,
+  "classes": 36,
   "resolution": "1280x720 px",
   "license_type": "Academic Non-Commercial",
   "paper_url": "https://arxiv.org/abs/2201.00267",
