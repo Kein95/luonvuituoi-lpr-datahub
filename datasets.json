@@ -170,7 +170,7 @@
   {
     "name": "ICPR 2026 LR-LPR",
     "country": "Brazil",
-    "size": "~19.8K",
+    "size": "~23K tracks",
     "frames": "multi (10 per seq)",
     "access": "license",
     "task": "recognition",
