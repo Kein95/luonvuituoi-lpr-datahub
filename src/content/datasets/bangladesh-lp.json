@@ -10,9 +10,10 @@
   "source_url": "https://www.kaggle.com/datasets/syednahinhossain/bangladeshi-license-plate-recognition-dataset",
   "notes": "Localization + Character Recognition. 27 classes.",
   "description": "Bangladeshi standard LP dataset with 2 tasks: LP Localization (bbox) and Character Recognition (27 classes: digits 0-9, Bengali chars ka/kha/ga/gha/ca/ja/ta/da/na/ba/va/ha, city names metro/dhaka/khulna/chattogram/jashore). Pascal VOC format.",
-  "classes": 27,
   "resolution": "960x708 typical",
   "license_type": "CC BY-SA 4.0",
   "paper_url": "https://doi.org/10.34740/kaggle/dsv/5885535",
-  "bibtex": "@misc{syed_nahin_hossain_md_zahim_hassan_2023,\n  title={Bangladeshi License Plate Recognition Dataset},\n  url={https://www.kaggle.com/dsv/5885535},\n  DOI={10.34740/KAGGLE/DSV/5885535},\n  publisher={Kaggle},\n  author={Syed Nahin Hossain and Md. Zahim Hassan},\n  year={2023}\n}"
+  "bibtex": "@misc{syed_nahin_hossain_md_zahim_hassan_2023,\n  title={Bangladeshi License Plate Recognition Dataset},\n  url={https://www.kaggle.com/dsv/5885535},\n  DOI={10.34740/KAGGLE/DSV/5885535},\n  publisher={Kaggle},\n  author={Syed Nahin Hossain and Md. Zahim Hassan},\n  year={2023}\n}",
+  "chars": 27,
+  "classes": 28
 }

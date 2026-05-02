@@ -14,13 +14,14 @@ export interface Dataset {
   source_url: string | null;
   paper_url?: string;
   notes?: string;
+  chars?: number;
 }
 
 interface Props {
   datasets: Dataset[];
 }
 
-type SortCol = "name" | "country" | "size" | "year";
+type SortCol = "name" | "country" | "size" | "year" | "chars";
 type SortDir = "asc" | "desc";
 
 const accessStyles: Record<string, { label: string; cls: string }> = {
@@ -53,7 +54,7 @@ export default function DatasetCatalog({ datasets }: Props) {
       .sort((a, b) => {
         let va: string | number = a[sortCol] ?? "";
         let vb: string | number = b[sortCol] ?? "";
-        if (sortCol === "year") { va = Number(va) || 0; vb = Number(vb) || 0; }
+        if (sortCol === "year" || sortCol === "chars") { va = Number(va) || 0; vb = Number(vb) || 0; }
         else { va = String(va).toLowerCase(); vb = String(vb).toLowerCase(); }
         if (va < vb) return sortDir === "asc" ? -1 : 1;
         if (va > vb) return sortDir === "asc" ? 1 : -1;
@@ -126,13 +127,13 @@ export default function DatasetCatalog({ datasets }: Props) {
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-[rgb(var(--bg-subtle))] border-b border-[rgb(var(--card-border))]">
-              {(["name", "country", "size", "year"] as SortCol[]).map((col) => (
+              {(["name", "country", "size", "chars", "year"] as SortCol[]).map((col) => (
                 <th
                   key={col}
                   onClick={() => handleSort(col)}
                   className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))] cursor-pointer hover:text-[rgb(var(--fg))] select-none transition-colors"
                 >
-                  {col}<SortArrow col={col} />
+                  {col === "chars" ? "Chars" : col}<SortArrow col={col} />
                 </th>
               ))}
               <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
@@ -143,7 +144,7 @@ export default function DatasetCatalog({ datasets }: Props) {
           <tbody className="divide-y divide-[rgb(var(--card-border))]/60">
             {filtered.length === 0 ? (
               <tr>
-                <td colSpan={7} className="px-5 py-12 text-center text-[rgb(var(--muted))]">
+                <td colSpan={8} className="px-5 py-12 text-center text-[rgb(var(--muted))]">
                   No datasets match your filters.
                 </td>
               </tr>
@@ -192,6 +193,7 @@ export default function DatasetCatalog({ datasets }: Props) {
                     </td>
                     <td className="px-5 py-4 text-sm">{d.country}</td>
                     <td className="px-5 py-4 font-mono text-xs tabular-nums">{d.size || "—"}</td>
+                    <td className="px-5 py-4 font-mono text-xs tabular-nums">{d.chars ?? "—"}</td>
                     <td className="px-5 py-4 font-mono text-xs tabular-nums">{d.year || "—"}</td>
                     <td className="px-5 py-4">
                       <span className={cn(

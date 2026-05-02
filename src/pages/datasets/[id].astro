@@ -81,8 +81,12 @@ try {
         <div class="text-xl font-bold font-mono capitalize">{d.frames}</div>
       </div>
       <div class="stat-card">
-        <div class="text-xs text-[rgb(var(--muted))] font-medium uppercase tracking-wider mb-2">Classes</div>
-        <div class="text-xl font-bold font-mono">{d.classes || "—"}</div>
+        <div class="text-xs text-[rgb(var(--muted))] font-medium uppercase tracking-wider mb-2">Chars</div>
+        <div class="text-xl font-bold font-mono">{d.chars ?? "—"}</div>
+      </div>
+      <div class="stat-card">
+        <div class="text-xs text-[rgb(var(--muted))] font-medium uppercase tracking-wider mb-2">Classes <span class="opacity-60 normal-case font-normal">(+CTC blank)</span></div>
+        <div class="text-xl font-bold font-mono">{d.classes ?? "—"}</div>
       </div>
       <div class="stat-card">
         <div class="text-xs text-[rgb(var(--muted))] font-medium uppercase tracking-wider mb-2">Annotation</div>

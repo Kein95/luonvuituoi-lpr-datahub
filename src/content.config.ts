@@ -15,6 +15,7 @@ const datasets = defineCollection({
     source_url: z.string().url().nullable(),
     notes: z.string().optional(),
     description: z.string().optional(),
+    chars: z.number().optional(),
     classes: z.number().optional(),
     resolution: z.string().optional(),
     bibtex: z.string().optional(),
