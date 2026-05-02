@@ -10,9 +10,10 @@
   "source_url": "https://zenodo.org/doi/10.5281/zenodo.13342102",
   "notes": "DDPM synthetic. GDPR-compliant.",
   "description": "GDPR-compliant dataset of 10K synthetic Ukrainian license plates generated via DDPM diffusion models. Designed for transfer learning to Cyrillic script recognition.",
-  "classes": 24,
   "resolution": "416x128 px avg",
   "license_type": "CC BY 4.0",
   "paper_url": "https://arxiv.org/abs/2501.03374",
-  "bibtex": "@misc{ukrainian_lp_2024,\n  title={Synthetic Ukrainian License Plate Dataset via Diffusion Models},\n  author={Ku-DML Research Group},\n  year={2024},\n  howpublished={\\url{https://zenodo.org/doi/10.5281/zenodo.13342102}}\n}"
+  "bibtex": "@misc{ukrainian_lp_2024,\n  title={Synthetic Ukrainian License Plate Dataset via Diffusion Models},\n  author={Ku-DML Research Group},\n  year={2024},\n  howpublished={\\url{https://zenodo.org/doi/10.5281/zenodo.13342102}}\n}",
+  "chars": 24,
+  "classes": 25
 }
