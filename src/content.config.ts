@@ -20,7 +20,6 @@ const datasets = defineCollection({
     resolution: z.string().optional(),
     bibtex: z.string().optional(),
     paper_url: z.string().url().optional(),
-    download_url: z.string().url().optional(),
     license_type: z.string().optional(),
     sample_images: z.array(z.string()).optional(),
   }),
