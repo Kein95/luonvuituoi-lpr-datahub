@@ -61,8 +61,9 @@ export default function SotaTable({ sotaData }: Props) {
     <div>
       {/* Dataset Selector */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
-        <label className="text-sm font-medium text-[rgb(var(--muted))]">Dataset:</label>
+        <label htmlFor="sota-dataset-select" className="text-sm font-medium text-[rgb(var(--muted))]">Dataset:</label>
         <select
+          id="sota-dataset-select"
           value={selectedDataset}
           onChange={(e) => setSelectedDataset(e.target.value)}
           className="px-3 py-2 rounded-lg border border-[rgb(var(--card-border))] bg-[rgb(var(--card))] text-[rgb(var(--fg))] text-sm"
@@ -86,14 +87,14 @@ export default function SotaTable({ sotaData }: Props) {
           <table className="w-full text-sm">
             <thead>
               <tr className="bg-[rgb(var(--card))] border-b border-[rgb(var(--card-border))]">
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))] w-12">#</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))] w-12">#</th>
                 <Th col="method" label="Method" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))]">Paper</th>
-                <th className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))]">Venue</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))]">Paper</th>
+                <th scope="col" className="px-4 py-3 text-left text-xs font-semibold text-[rgb(var(--muted))]">Venue</th>
                 <Th col="year" label="Year" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} />
                 <Th col="accuracy" label="Accuracy" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} align="right" />
                 <Th col="params_m" label="Params (M)" sortCol={sortCol} sortDir={sortDir} onSort={handleSort} align="right" />
-                <th className="px-4 py-3 text-center text-xs font-semibold text-[rgb(var(--muted))]">Code</th>
+                <th scope="col" className="px-4 py-3 text-center text-xs font-semibold text-[rgb(var(--muted))]">Code</th>
               </tr>
             </thead>
             <tbody>
@@ -123,7 +124,7 @@ export default function SotaTable({ sotaData }: Props) {
                       <a
                         href={r.code_url}
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                         className="text-[rgb(var(--accent))] hover:underline text-xs"
                       >
                         GitHub
@@ -157,17 +158,23 @@ function Th({ col, label, sortCol, sortDir, onSort, align = "left" }: {
   const isActive = sortCol === col;
   return (
     <th
-      onClick={() => onSort(col)}
-      className={cn(
-        "px-4 py-3 text-xs font-semibold uppercase tracking-wider cursor-pointer select-none transition-colors",
-        align === "right" ? "text-right" : "text-left",
-        isActive ? "text-[rgb(var(--accent))]" : "text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))]"
-      )}
+      scope="col"
+      aria-sort={isActive ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
+      className={cn("px-4 py-3", align === "right" ? "text-right" : "text-left")}
     >
-      {label}
-      <span className="ml-1">
-        {isActive ? (sortDir === "asc" ? "↑" : "↓") : ""}
-      </span>
+      <button
+        type="button"
+        onClick={() => onSort(col)}
+        className={cn(
+          "inline-flex items-center text-xs font-semibold uppercase tracking-wider cursor-pointer select-none transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--ring))]/40",
+          isActive ? "text-[rgb(var(--accent))]" : "text-[rgb(var(--muted))] hover:text-[rgb(var(--fg))]"
+        )}
+      >
+        {label}
+        <span className="ml-1" aria-hidden="true">
+          {isActive ? (sortDir === "asc" ? "↑" : "↓") : ""}
+        </span>
+      </button>
     </th>
   );
 }

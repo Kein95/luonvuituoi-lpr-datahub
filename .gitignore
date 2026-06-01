@@ -6,3 +6,6 @@ dist/
 .DS_Store
 
 .vercel
+
+# Stale standalone prototype — the live homepage is built from src/pages/index.astro
+/index.html
