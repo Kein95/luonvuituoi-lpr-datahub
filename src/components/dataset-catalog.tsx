@@ -1,21 +1,10 @@
 import { useState, useMemo } from "react";
+import type { CollectionEntry } from "astro:content";
 import { cn } from "@/lib/utils";
 
-export interface Dataset {
-  id: string;
-  name: string;
-  country: string;
-  size: string;
-  frames: string;
-  access: "public" | "license" | "license-edu" | "license-staff";
-  task: string;
-  annotation: string;
-  year: number;
-  source_url: string | null;
-  paper_url?: string;
-  notes?: string;
-  chars?: number;
-}
+// Single source of truth: derived from the zod schema in src/content.config.ts
+// so this stays in sync automatically when the schema changes.
+export type Dataset = CollectionEntry<"datasets">["data"] & { id: string };
 
 interface Props {
   datasets: Dataset[];
@@ -68,11 +57,11 @@ export default function DatasetCatalog({ datasets }: Props) {
   }
 
   function SortArrow({ col }: { col: SortCol }) {
-    if (sortCol !== col) return <span className="ml-1 opacity-30">↕</span>;
-    return <span className="ml-1 text-[rgb(var(--accent))]">{sortDir === "asc" ? "↑" : "↓"}</span>;
+    if (sortCol !== col) return <span className="ml-1 opacity-30" aria-hidden="true">↕</span>;
+    return <span className="ml-1 text-[rgb(var(--accent))]" aria-hidden="true">{sortDir === "asc" ? "↑" : "↓"}</span>;
   }
 
-  function handleOutboundClick(e: React.MouseEvent<HTMLAnchorElement>, dataset: Dataset) {
+  function handleOutboundClick(dataset: Dataset) {
     try {
       const clicks = JSON.parse(localStorage.getItem("lpr_clicks") || "[]");
       clicks.push({ dataset: dataset.name, type: "source", url: dataset.source_url, time: Date.now() });
@@ -94,23 +83,24 @@ export default function DatasetCatalog({ datasets }: Props) {
           <input
             type="text"
             placeholder="Search datasets..."
+            aria-label="Search datasets by name, country, or notes"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full pl-10 pr-3 py-2 rounded-lg border border-[rgb(var(--card-border))] bg-[rgb(var(--bg))] text-[rgb(var(--fg))] text-sm placeholder:text-[rgb(var(--muted))]/60 focus:outline-none focus:ring-2 focus:ring-[rgb(var(--ring))]/40 focus:border-[rgb(var(--accent))]/50 transition-all"
           />
         </div>
-        <select value={filterCountry} onChange={(e) => setFilterCountry(e.target.value)} className={selectClass}>
+        <select value={filterCountry} onChange={(e) => setFilterCountry(e.target.value)} className={selectClass} aria-label="Filter by country">
           <option value="">All Countries</option>
           {countries.map((c) => <option key={c} value={c}>{c}</option>)}
         </select>
-        <select value={filterAccess} onChange={(e) => setFilterAccess(e.target.value)} className={selectClass}>
+        <select value={filterAccess} onChange={(e) => setFilterAccess(e.target.value)} className={selectClass} aria-label="Filter by access level">
           <option value="">All Access</option>
           <option value="public">Public</option>
           <option value="license">License</option>
           <option value="license-edu">License (.edu)</option>
           <option value="license-staff">License (Staff)</option>
         </select>
-        <select value={filterFrames} onChange={(e) => setFilterFrames(e.target.value)} className={selectClass}>
+        <select value={filterFrames} onChange={(e) => setFilterFrames(e.target.value)} className={selectClass} aria-label="Filter by frame type">
           <option value="">All Frames</option>
           <option value="single">Single</option>
           <option value="multi">Multi</option>
@@ -130,15 +120,22 @@ export default function DatasetCatalog({ datasets }: Props) {
               {(["name", "country", "size", "chars", "year"] as SortCol[]).map((col) => (
                 <th
                   key={col}
-                  onClick={() => handleSort(col)}
-                  className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))] cursor-pointer hover:text-[rgb(var(--fg))] select-none transition-colors"
+                  scope="col"
+                  aria-sort={sortCol === col ? (sortDir === "asc" ? "ascending" : "descending") : "none"}
+                  className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]"
                 >
-                  {col === "chars" ? "Chars" : col}<SortArrow col={col} />
+                  <button
+                    type="button"
+                    onClick={() => handleSort(col)}
+                    className="inline-flex items-center uppercase tracking-widest hover:text-[rgb(var(--fg))] select-none transition-colors cursor-pointer rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgb(var(--ring))]/40"
+                  >
+                    {col === "chars" ? "Chars" : col}<SortArrow col={col} />
+                  </button>
                 </th>
               ))}
-              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
-              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Access</th>
-              <th className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Notes</th>
+              <th scope="col" className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Frames</th>
+              <th scope="col" className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Access</th>
+              <th scope="col" className="px-5 py-3.5 text-justify text-[11px] font-semibold uppercase tracking-widest text-[rgb(var(--muted))]">Notes</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[rgb(var(--card-border))]/60">
@@ -166,8 +163,8 @@ export default function DatasetCatalog({ datasets }: Props) {
                           <a
                             href={d.source_url}
                             target="_blank"
-                            rel="noopener"
-                            onClick={(e) => handleOutboundClick(e, d)}
+                            rel="noopener noreferrer"
+                            onClick={() => handleOutboundClick(d)}
                             className="inline-flex items-center justify-center w-5 h-5 rounded text-[rgb(var(--muted))] hover:text-[rgb(var(--accent))] hover:bg-[rgb(var(--accent))]/10 transition-all"
                             title="Source Repository"
                           >
@@ -180,7 +177,7 @@ export default function DatasetCatalog({ datasets }: Props) {
                           <a
                             href={d.paper_url}
                             target="_blank"
-                            rel="noopener"
+                            rel="noopener noreferrer"
                             className="inline-flex items-center justify-center w-5 h-5 rounded text-[rgb(var(--muted))] hover:text-[rgb(var(--accent))] hover:bg-[rgb(var(--accent))]/10 transition-all"
                             title="Paper"
                           >

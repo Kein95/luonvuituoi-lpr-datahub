@@ -120,7 +120,7 @@ try {
           <a
             href={d.source_url}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="outbound-link inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[rgb(var(--accent))] text-white text-sm font-semibold hover:shadow-glow hover:brightness-110 transition-all duration-300"
             data-dataset={d.name}
             data-type="source"
@@ -133,7 +133,7 @@ try {
           <a
             href={d.paper_url}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="outbound-link inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-[rgb(var(--card-border))] text-[rgb(var(--fg))] text-sm font-medium hover:border-[rgb(var(--accent))]/50 hover:text-[rgb(var(--accent))] transition-all"
             data-dataset={d.name}
             data-type="paper"
@@ -178,10 +178,10 @@ try {
           <table class="w-full text-sm">
             <thead>
               <tr class="bg-[rgb(var(--bg-subtle))] border-b border-[rgb(var(--card-border))]">
-                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">#</th>
-                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Method</th>
-                <th class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Venue</th>
-                <th class="px-4 py-2 text-right text-xs font-semibold text-[rgb(var(--muted))]">Accuracy</th>
+                <th scope="col" class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">#</th>
+                <th scope="col" class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Method</th>
+                <th scope="col" class="px-4 py-2 text-left text-xs font-semibold text-[rgb(var(--muted))]">Venue</th>
+                <th scope="col" class="px-4 py-2 text-right text-xs font-semibold text-[rgb(var(--muted))]">Accuracy</th>
               </tr>
             </thead>
             <tbody>
