@@ -14,6 +14,6 @@
   "license_type": "Research Agreement",
   "paper_url": "https://xlim-perception.github.io/icip_xlpsr/dataset.html",
   "bibtex": "@misc{xlpsr_icip2026,\n  title={XLPSR Challenge: Extended Low-Resolution License Plate Super-Resolution},\n  author={ANR-IMPROVED Project},\n  howpublished={\\url{https://xlim-perception.github.io/icip_xlpsr/dataset.html}},\n  year={2026}\n}",
-  "chars": 36,
-  "classes": 37
+  "chars": 33,
+  "classes": 34
 }
