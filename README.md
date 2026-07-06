@@ -2,7 +2,7 @@
 
 **ALL-IN-ONE gateway for License Plate Recognition research.**
 
-🌐 **Live:** [lpr-dataset-hub.vercel.app](https://lpr-dataset-hub.vercel.app/)
+🌐 **Live:** [lpr-datahub.luonvuituoi.work](https://lpr-datahub.luonvuituoi.work/) · [lpr-dataset-hub.vercel.app](https://lpr-dataset-hub.vercel.app/)
 
 Discover, compare, and access 16+ datasets across 10+ countries.
 Built for researchers, by researchers.
