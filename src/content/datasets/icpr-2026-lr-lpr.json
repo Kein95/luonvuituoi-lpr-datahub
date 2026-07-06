@@ -13,7 +13,8 @@
   "resolution": "LR + HR frame pairs (dimensions not published)",
   "license_type": "Non-Commercial Research (.edu required)",
   "paper_url": "https://arxiv.org/abs/2604.22506",
-  "bibtex": "@misc{laroca2026icpr2026competitionlowresolution,\n  title={ICPR 2026 Competition on Low-Resolution License Plate Recognition},\n  author={Rayson Laroca and Valfride Nascimento and Donggun Kim and Sanghyeok Chung and Subin Bae and Uihwan Seo and Seungsang Oh and Chi M. Phung and Minh G. Vo and Xingsong Ye and Yongkun Du and Yuchen Su and Zhineng Chen and Sunhee Heo and Hyangwoo Lee and Kihyun Na and Khanh V. Vu Nguyen and Sang T. Pham and Duc N. N. Phung and Trong P. Le and Vy N. Vo Tran and David Menotti},\n  year={2026},\n  eprint={2604.22506},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2604.22506}\n}",
+  "code_url": "https://github.com/raysonlaroca/lrlpr-26-dataset",
+  "bibtex": "@inproceedings{laroca2026competition,\n  title = {{ICPR} 2026 {C}ompetition on Low-Resolution License Plate Recognition},\n  author = {R. {Laroca} and V. {Nascimento} and D. {Kim} and S. {Chung} and S. {Bae} and U. {Seo} and S. {Oh} and C. M. {Phung} and M. G. {Vo} and X. {Ye} and Y. {Du} and Y. {Su} and Z. {Chen} and S. {Heo} and H. {Lee} and K. {Na} and K. V. {Vu Nguyen} and S. T. {Pham} and D. N. N. {Phung} and T. P. {Le} and V. N. {Vo Tran} and D. {Menotti}},\n  year = {2026},\n  month = {Aug},\n  booktitle = {International Conference on Pattern Recognition (ICPR)},\n  pages = {1-20}\n}",
   "chars": 36,
   "classes": 37
 }
