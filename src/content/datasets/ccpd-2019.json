@@ -14,6 +14,6 @@
   "license_type": "MIT",
   "paper_url": "https://arxiv.org/abs/1807.03714",
   "bibtex": "@inproceedings{xu2018towards,\n  title={Towards End-to-End License Plate Detection and Recognition: A Large Dataset and Baseline},\n  author={Xu, Zhenbo and Yang, Wei and Meng, Ajin and Lu, Nanxue and Huang, Huan},\n  booktitle={ECCV},\n  pages={255--271},\n  year={2018}\n}",
-  "chars": 68,
-  "classes": 69
+  "chars": 67,
+  "classes": 68
 }
